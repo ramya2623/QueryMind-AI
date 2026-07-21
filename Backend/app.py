@@ -8,11 +8,19 @@ from dotenv import load_dotenv
 
 from pydantic import BaseModel
 
+from fastapi.middleware.cors import CORSMiddleware
+app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 load_dotenv()
 
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-
-app = FastAPI()
 class Question(BaseModel):
     question: str
 
