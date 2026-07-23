@@ -4,6 +4,9 @@ import axios from "axios";
 function App() {
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState([]);
+  const [question, setQuestion] = useState("");
+  const [sql, setSql] = useState("");
+  const [results, setResults] = useState([]);
 
   const uploadFile = async () => {
     if (!file) {
@@ -27,6 +30,22 @@ function App() {
       console.error(error);
       alert("Upload failed.");
     }
+  };
+  const askQuestion = async () => {
+  try {
+    const response = await axios.post(
+      "http://127.0.0.1:8000/ask",
+      {
+        question: question,
+      }
+    );
+
+    setSql(response.data.generated_sql);
+    setResults(response.data.results);
+  } catch (error) {
+    console.error(error);
+    alert("Failed to get results.");
+  }
   };
 
   return (
@@ -61,6 +80,51 @@ function App() {
           <td>{row.product}</td>
           <td>{row.region}</td>
           <td>{row.sales}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+)}
+<h2>Ask a Question</h2>
+
+<input
+  type="text"
+  value={question}
+  onChange={(e) => setQuestion(e.target.value)}
+  placeholder="e.g. Show all laptops"
+  style={{
+    width: "350px",
+    padding: "10px",
+    marginRight: "10px",
+  }}
+/>
+
+<button onClick={askQuestion}>
+  Ask
+</button>
+
+<h2>Generated SQL</h2>
+
+<pre>{sql}</pre>
+
+<h2>Results</h2>
+
+{results.length > 0 && (
+  <table border="1" cellPadding="8">
+    <thead>
+      <tr>
+        {Object.keys(results[0]).map((key) => (
+          <th key={key}>{key}</th>
+        ))}
+      </tr>
+    </thead>
+
+    <tbody>
+      {results.map((row, index) => (
+        <tr key={index}>
+          {Object.values(row).map((value, i) => (
+            <td key={i}>{value}</td>
+          ))}
         </tr>
       ))}
     </tbody>
