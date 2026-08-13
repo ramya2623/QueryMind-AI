@@ -41,3 +41,6 @@ Frontend/src-backup/
 
 # Local database
 Backend/querymind.db
+
+# Uploaded datasets
+Datasets/uploads/
