@@ -20,7 +20,7 @@ function Home() {
 
         <div className="hero-section">
 
-          <h1>Good Evening, Ramya 👋</h1>
+          <h1>Good Evening, Ramya </h1>
 
           <p>
             Welcome back to QueryMind AI.

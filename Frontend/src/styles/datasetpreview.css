@@ -136,3 +136,89 @@
 
     border-radius: 14px;
 }
+
+/* =========================================
+   DATASET PREVIEW — DARK BLUE THEME
+========================================= */
+
+body.dark-mode .dataset-preview-page {
+    background: #0A0F16;
+    color: #DDE3E8;
+}
+
+body.dark-mode .dataset-preview-content {
+    background: #0A0F16;
+    color: #DDE3E8;
+}
+
+
+/* Back button */
+
+body.dark-mode .back-btn {
+    color: #8F9BA8;
+}
+
+body.dark-mode .back-btn:hover {
+    color: #DDE3E8;
+}
+
+
+/* Header */
+
+body.dark-mode .preview-title h1 {
+    color: #DDE3E8;
+}
+
+body.dark-mode .preview-header p {
+    color: #8995A1;
+}
+
+
+/* Table card */
+
+body.dark-mode .table-container {
+    background: #111821;
+    border: 1px solid #293540;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+}
+
+
+/* Table */
+
+body.dark-mode .preview-table th,
+body.dark-mode .preview-table td {
+    border-bottom-color: #293540;
+}
+
+body.dark-mode .preview-table th {
+    background: #171F29;
+    color: #D5DCE2;
+}
+
+body.dark-mode .preview-table td {
+    color: #AEB9C3;
+}
+
+body.dark-mode .preview-table tbody tr:hover {
+    background: #171F29;
+}
+
+
+/* Loading / Error */
+
+body.dark-mode .loading {
+    color: #8995A1;
+}
+
+body.dark-mode .error {
+    color: #D97878;
+}
+
+
+/* Empty state */
+
+body.dark-mode .empty-preview {
+    background: #111821;
+    border: 1px solid #293540;
+    color: #AEB9C3;
+}

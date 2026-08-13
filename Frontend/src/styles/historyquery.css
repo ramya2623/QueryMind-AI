@@ -124,3 +124,139 @@
   background: #f8e5e1;
   margin-top: 20px;
 }
+
+/* =========================================
+   HISTORY QUERY — DARK BLUE THEME
+========================================= */
+
+body.dark-mode .history-query-page {
+    background: #0A0F16;
+    color: #DDE3E8;
+}
+
+body.dark-mode .history-query-content {
+    color: #DDE3E8;
+}
+
+
+/* Back button */
+
+body.dark-mode .back-button {
+    color: #8F9BA8;
+}
+
+body.dark-mode .back-button:hover {
+    color: #DDE3E8;
+}
+
+
+/* Header */
+
+body.dark-mode .history-query-header h1 {
+    color: #DDE3E8;
+}
+
+body.dark-mode .history-query-header p {
+    color: #8995A1;
+}
+
+
+/* Dataset information */
+
+body.dark-mode .history-query-dataset {
+    background: #171F29;
+    border: 1px solid #293540;
+}
+
+body.dark-mode .history-query-dataset span {
+    color: #8995A1;
+}
+
+body.dark-mode .history-query-dataset h3 {
+    color: #D5DCE2;
+}
+
+
+/* Main cards */
+
+body.dark-mode .history-query-card,
+body.dark-mode .history-insight-card {
+    background: #111821;
+    border: 1px solid #293540;
+    color: #DDE3E8;
+}
+
+
+/* Card titles */
+
+body.dark-mode .card-title h3 {
+    color: #D5DCE2;
+}
+
+body.dark-mode .card-title svg {
+    color: #4B7FA8;
+}
+
+
+/* Question */
+
+body.dark-mode .question-text {
+    color: #AEB9C3;
+}
+
+
+/* SQL */
+
+body.dark-mode .sql-result {
+    background: #0B1118;
+    color: #AFC4D5;
+    border: 1px solid #293540;
+}
+
+
+/* Results table */
+
+body.dark-mode .results-table-wrapper th,
+body.dark-mode .results-table-wrapper td {
+    border-bottom-color: #293540;
+}
+
+body.dark-mode .results-table-wrapper th {
+    background: #171F29;
+    color: #D5DCE2;
+}
+
+body.dark-mode .results-table-wrapper td {
+    color: #AEB9C3;
+}
+
+body.dark-mode .results-table-wrapper tr:hover {
+    background: #171F29;
+}
+
+
+/* No results */
+
+body.dark-mode .no-results {
+    color: #8995A1;
+}
+
+
+/* AI Insight */
+
+body.dark-mode .history-insight-card {
+    background: #111821;
+}
+
+body.dark-mode .history-insight-card p {
+    color: #AEB9C3;
+}
+
+
+/* Query error */
+
+body.dark-mode .query-error {
+    background: #321F22;
+    border: 1px solid #4A2B30;
+    color: #D97878;
+}

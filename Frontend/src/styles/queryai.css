@@ -1,506 +1,338 @@
-.query-page{
-    min-height:100vh;
-    background:var(--cream);
+.query-page {
+    min-height: 100vh;
+    background: var(--background);
 }
 
-.query-content{
-
-    margin-left:230px;
-
-    padding:120px 35px 35px;
-
-    min-height:100vh;
-
-    background:linear-gradient(
-        135deg,
-        #fcfaf7,
-        #f6efe7
-    );
-
+.query-content {
+    margin-left: 230px;
+    padding: 120px 35px 35px;
+    min-height: 100vh;
+    background: var(--background);
 }
 
 /* ===========================
         Header
 =========================== */
 
-.query-header{
-
-    margin-bottom:30px;
-
+.query-header {
+    margin-bottom: 30px;
 }
 
-.query-header h1{
-
-    font-family:var(--font-heading);
-
-    font-size:28px;
-
-    color:var(--coffee);
-
-    margin-bottom:6px;
-
+.query-header h1 {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    color: var(--text);
+    margin-bottom: 6px;
 }
 
-.query-header p{
-
-    color:#7A6E64;
-
-    font-size:16px;
-
+.query-header p {
+    color: var(--text-light);
+    font-size: 16px;
 }
 
 /* ===========================
-        Query Box
+        Dataset Selector
 =========================== */
-
-.query-box{
-
-    background:rgba(255,255,255,.75);
-
-    backdrop-filter:blur(16px);
-
-    border-radius:22px;
-
-    padding:18px  20px;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.05);
-
-    margin-bottom:24px;
-
-}
-
-.query-box textarea{
-
-    width:100%;
-
-    min-height:80px;
-
-    border:none;
-
-    resize:none;
-
-    outline:none;
-
-    background:transparent;
-
-    font-size:15px;
-
-    font-family:inherit;
-
-    color:#4A3527;
-
-    line-height:1.6;
-
-}
-
-.query-box textarea::placeholder{
-
-    color:#9A8E84;
-
-}
-
-.query-box button{
-
-    margin-top:14px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    padding:12px 18px;
-
-    background:#6D4C41;
-
-    color:white;
-
-    border:none;
-
-    border-radius:14px;
-
-    cursor:pointer;
-
-    font-size:14px;
-
-    font-weight:500;
-
-    transition:.3s;
-
-}
-
-.query-box button:hover{
-
-    background:#5B3F35;
-
-    transform:translateY(-2px);
-
-}
-
-/* ===========================
-      SQL + Results
-=========================== */
-
-.result-grid{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:22px;
-
-    margin-bottom:24px;
-
-}
-
-.result-card{
-
-    background:rgba(255,255,255,.78);
-
-    backdrop-filter:blur(16px);
-
-    border-radius:22px;
-
-    padding:24px;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.05);
-
-}
-
-/* ===========================
-      Card Header
-=========================== */
-
-.card-title{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    margin-bottom:18px;
-
-}
-
-.card-title svg{
-
-    color:var(--coffee);
-
-}
-
-.card-title h3{
-
-    margin:0;
-
-    font-size:22px;
-
-    font-family:var(--font-heading);
-
-    color:var(--coffee);
-
-}
-
-/* ===========================
-        SQL
-=========================== */
-
-.result-card pre{
-
-    background:#F7F3EE;
-
-    padding:18px;
-
-    border-radius:14px;
-
-    overflow:auto;
-
-    white-space:pre-wrap;
-
-    word-break:break-word;
-
-    font-size:14px;
-
-    line-height:1.7;
-
-}
-
-/* ===========================
-        Table
-=========================== */
-
-table{
-
-    width:100%;
-
-    border-collapse:collapse;
-
-}
-
-th{
-
-    text-align:left;
-
-    padding-bottom:12px;
-
-    color:#6D4C41;
-
-    border-bottom:1px solid #E7DDD3;
-
-}
-
-td{
-
-    padding:14px 0;
-
-    border-bottom:1px solid #EFE7DE;
-
-    color:#5B4A3E;
-
-}
-
-/* ===========================
-      AI Insight
-=========================== */
-
-.insight-card{
-
-    background:rgba(255,255,255,.78);
-
-    backdrop-filter:blur(16px);
-
-    border-radius:22px;
-
-    padding:24px;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.05);
-
-}
-
-.insight-card p{
-
-    color:#6F6258;
-
-    line-height:1.8;
-
-    font-size:16px;
-
-}
-
-/* ===========================
-      Hover
-=========================== */
-
-.result-card,
-.insight-card{
-
-    transition:.3s;
-
-}
-
-.result-card:hover,
-.insight-card:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:
-        0 18px 40px rgba(74,53,39,.08);
-
-}
-
-/* ===========================
-      Responsive
-=========================== */
-
-@media(max-width:1000px){
-
-    .result-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-}
 
 .dataset-selector {
-    margin-bottom: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
 }
 
 .dataset-selector label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
+    color: var(--text);
 }
 
 .dataset-selector select {
     width: 100%;
-    padding: 12px 14px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    background: white;
-    font-size: 14px;
-    outline: none;
-}
-
-.query-box button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-.query-error {
-    margin: 15px 0;
-    padding: 12px 15px;
-    border-radius: 10px;
-    background: #ffecec;
-    color: #c0392b;
-}
-
-.sql-output {
-    background: #f6f6f6;
-    padding: 15px;
-    border-radius: 10px;
-    white-space: pre-wrap;
-    overflow-x: auto;
-    font-family: monospace;
-    font-size: 13px;
-}
-
-.table-wrapper {
-    width: 100%;
-    overflow-x: auto;
-}
-
-.table-wrapper table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.table-wrapper th,
-.table-wrapper td {
-    padding: 10px 12px;
-    border-bottom: 1px solid #eee;
-    text-align: left;
-    white-space: nowrap;
-}
-
-.dataset-selector {
-    background: #ffffff;
-    border: 1px solid #e9e5df;
-    border-radius: 14px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.dataset-selector select {
-    width: 100%;
-    margin-top: 15px;
+    margin-top: 12px;
     padding: 13px 15px;
-    border: 1px solid #ddd7cf;
-    border-radius: 9px;
-    background: #faf8f5;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface-elevated);
+    color: var(--text);
     font-size: 14px;
     outline: none;
 }
 
 .dataset-selector select:focus {
-    border-color: #9b8065;
+    border-color: var(--primary);
 }
 
-.sql-result {
-    margin-top: 15px;
-    padding: 18px;
-    background: #f8f6f2;
+/* ===========================
+        Query Box
+=========================== */
+
+.query-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+    border-radius: 20px;
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+}
+
+.query-box textarea {
+    width: 100%;
+    min-height: 100px;
+
+    border: 1px solid #293540;
+    border-radius: 12px;
+
+    resize: none;
+    outline: none;
+
+    background: #111821;
+
+    padding: 12px 14px;
+
+    box-sizing: border-box;
+
+    font-size: 15px;
+    font-family: inherit;
+
+    color: #DDE3E8;
+
+    line-height: 1.6;
+}
+
+.query-box textarea::placeholder {
+    color: #7F8B98;
+}
+
+.query-box textarea:focus {
+    border-color: #3F6F96;
+}
+
+.query-box textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.query-box button {
+    margin-top: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 10px 15px;
+
+    background: #2F5F87;
+    color: #E6EDF3;
+
+    border: none;
     border-radius: 10px;
-    overflow-x: auto;
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.query-box button:hover {
+    background: #274F70;
+    transform: translateY(-2px);
+}
+
+.query-box button:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+/* ===========================
+      SQL + Results
+=========================== */
+
+.result-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-bottom: 24px;
+}
+
+.result-card,
+.insight-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    transition: .3s;
+}
+
+.result-card:hover,
+.insight-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===========================
+      Card Header
+=========================== */
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.card-title svg {
+    color: var(--primary);
+}
+
+.card-title h3 {
+    margin: 0;
+    font-size: 22px;
+    font-family: var(--font-heading);
+    color: var(--text);
+}
+
+/* ===========================
+        SQL
+=========================== */
+
+.result-card pre,
+.sql-result,
+.sql-output {
+    background: var(--surface-elevated);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 18px;
+    border-radius: 12px;
+    overflow: auto;
     white-space: pre-wrap;
+    word-break: break-word;
     font-family: monospace;
     font-size: 13px;
+    line-height: 1.7;
 }
 
+/* ===========================
+        Tables
+=========================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 12px;
+    color: var(--text);
+    background: var(--surface-elevated);
+    border-bottom: 1px solid var(--border);
+}
+
+td {
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-light);
+}
+
+tr:hover {
+    background: var(--surface-hover);
+}
+
+.table-wrapper,
 .results-table-wrapper {
     width: 100%;
     overflow-x: auto;
 }
 
+.table-wrapper table,
 .results-table-wrapper table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
 }
 
+.table-wrapper th,
+.table-wrapper td,
 .results-table-wrapper th,
 .results-table-wrapper td {
     padding: 13px 15px;
     text-align: left;
-    border-bottom: 1px solid #eee8e0;
     white-space: nowrap;
 }
 
-.results-table-wrapper th {
-    background: #faf8f5;
+/* ===========================
+      AI Insight
+=========================== */
+
+.insight-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 16px;
 }
+
+/* ===========================
+      Errors
+=========================== */
 
 .query-error {
     margin-bottom: 20px;
     padding: 12px 15px;
-    border-radius: 9px;
-    background: #fff1f1;
-    color: #b33;
+    border-radius: 10px;
+    background: var(--error-bg);
+    color: var(--danger);
+    border: 1px solid var(--danger);
 }
+
+/* ===========================
+      Empty State
+=========================== */
 
 .query-empty {
     margin-top: 30px;
     padding: 50px;
     text-align: center;
-    background: #ffffff;
-    border: 1px solid #e9e5df;
-    border-radius: 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
 }
 
 .query-empty p {
-    color: #777;
-}
-.dataset-selector{
-    background:rgba(255,255,255,.78);
-    backdrop-filter:blur(16px);
-    border-radius:22px;
-    padding:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.05);
-    margin-bottom:24px;
+    color: var(--text-light);
 }
 
-.dataset-selector select{
-    width:100%;
-    margin-top:12px;
-    padding:13px 15px;
-    border:1px solid #E7DDD2;
-    border-radius:12px;
-    background:#FAF8F5;
-    color:#4A3527;
-    outline:none;
+/* ===========================
+      Preview Link
+=========================== */
+
+.query-preview-link {
+    margin-top: 10px;
+    border: none;
+    background: transparent;
+    color: var(--primary);
+    cursor: pointer;
+    padding: 0;
+    font-size: 13px;
 }
 
-.query-preview-link{
-    margin-top:10px;
-    border:none;
-    background:transparent;
-    color:#6D4C41;
-    cursor:pointer;
-    padding:0;
-    font-size:13px;
+.query-preview-link:hover {
+    text-decoration: underline;
 }
 
-.query-preview-link:hover{
-    text-decoration:underline;
-}
+/* ===========================
+      Responsive
+=========================== */
 
-.query-error{
-    margin-bottom:20px;
-    padding:12px 15px;
-    border-radius:10px;
-    background:#FFF1F1;
-    color:#B33;
+@media (max-width: 1000px) {
+
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+
 }

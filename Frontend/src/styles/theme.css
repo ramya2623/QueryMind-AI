@@ -1,41 +1,52 @@
-:root{
+:root {
+    /* Backgrounds */
+    --bg: #0A0F16;
+    --background: #0A0F16;
 
-    --bg:#F8F3EC;
+    --surface: #111821;
+    --surface-elevated: #171F2A;
+    --surface-hover: #1D2835;
+    --sidebar: #0D141C;
 
-    --surface:#FFFDF9;
+    /* Brand */
+    --primary: #315A7D;
+    --primary-light: #47799F;
+    --secondary: #3E6687;
+    --accent: #4B7FA8;
 
-    --primary:#4A3527;
+    /* Text */
+    --text: #E7ECF1;
+    --text-main: #E7ECF1;
+    --text-light: #AEB8C2;
+    --text-muted: #7E8995;
 
-    --secondary:#8D6B50;
+    /* Borders */
+    --border: #293540;
 
-    --accent:#D6BEA6;
+    /* Hover */
+    --hover: #1D2835;
 
-    --border:#E7DED2;
+    /* Status */
+    --success: #629078;
+    --danger: #C4777D;
+    --warning: #C19A5B;
 
-    --text:#34261D;
+    /* Shadow */
+    --shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 
-    --muted:#77695E;
-
-    --shadow:0 15px 40px rgba(74,53,39,.10);
-
-    --radius:22px;
-
+    /* Radius */
+    --radius: 18px;
 }
 
-body{
-
-    margin:0;
-
-    background:var(--bg);
-
-    color:var(--text);
-
-    font-family:"Inter",sans-serif;
-
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
 }
 
-h1,h2,h3{
-
-    font-family:"Cormorant Garamond",serif;
-
+h1,
+h2,
+h3 {
+    font-family: "Inter", sans-serif;
 }

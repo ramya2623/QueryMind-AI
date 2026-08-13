@@ -38,7 +38,7 @@
 }
 
 .sidebar-logo h2{
-    font-family:"Cormorant Garamond", serif;
+    font-family:"Manrope", serif;
     color:#4A3527;
     font-size:26px;
     font-weight:600;
@@ -178,4 +178,89 @@
 
     font-size:12px;
 
+}
+
+/* =========================================
+   QUERYMIND AI — SIDEBAR DARK BLUE THEME
+========================================= */
+
+body.dark-mode .sidebar {
+    background: #0D141C !important;
+
+    border-right: 1px solid #293540;
+
+    color: #DDE3E8;
+}
+
+
+/* Logo */
+
+body.dark-mode .sidebar-logo h2 {
+    font-family: "Manrope", sans-serif;
+    color: #DDE3E8;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+body.dark-mode .brand-icon {
+    color: #4B7FA8;
+}
+
+
+/* Menu */
+
+body.dark-mode .sidebar-menu a {
+    color: #8995A1;
+}
+
+body.dark-mode .sidebar-menu a:hover {
+    background: #171F29;
+
+    color: #DDE3E8;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Active menu item */
+
+body.dark-mode .sidebar-menu a.active {
+    background: #1B2A38;
+
+    color: #6FA0C7;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .sidebar-menu a.active svg {
+    color: #6FA0C7;
+}
+
+
+/* Icons */
+
+body.dark-mode .sidebar-menu svg {
+    color: inherit;
+}
+
+
+/* Footer */
+
+body.dark-mode .sidebar-footer {
+    border-top: 1px solid #293540;
+}
+
+body.dark-mode .user-avatar {
+    background: #3F6F96;
+    color: #FFFFFF;
+}
+
+body.dark-mode .sidebar-footer h4 {
+    color: #DDE3E8;
+}
+
+body.dark-mode .sidebar-footer p {
+    color: #8995A1;
 }

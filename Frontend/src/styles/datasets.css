@@ -342,3 +342,48 @@
     from{opacity:0; transform:translate(-50%, -10px);}
     to{opacity:1; transform:translate(-50%, 0);}
 }
+
+/* =========================================
+   DATASETS — BLUE DARK MODE BUTTONS
+========================================= */
+
+/* Upload Dataset */
+
+body.dark-mode .upload-btn {
+    background: #315F85 !important;
+    color: #F2F6FA !important;
+    border: 1px solid #40739D !important;
+}
+
+body.dark-mode .upload-btn:hover {
+    background: #3A709A !important;
+    transform: translateY(-2px);
+}
+
+
+/* Preview */
+
+body.dark-mode .dataset-actions button {
+    background: #263849 !important;
+    color: #BFD3E4 !important;
+    border: 1px solid #38536A !important;
+}
+
+body.dark-mode .dataset-actions button:hover {
+    background: #30495D !important;
+    color: #E5EEF5 !important;
+}
+
+
+/* Delete */
+
+body.dark-mode .dataset-actions .delete {
+    background: #302A32 !important;
+    color: #D9A5AA !important;
+    border: 1px solid #514047 !important;
+}
+
+body.dark-mode .dataset-actions .delete:hover {
+    background: #493039 !important;
+    color: #F0B9BE !important;
+}

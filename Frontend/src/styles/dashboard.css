@@ -1,91 +1,142 @@
-.dashboard{
-    min-height:100vh;
-    background:var(--cream);
+/* =========================================
+   QUERYMIND AI — DASHBOARD
+   DARK BLUE THEME
+========================================= */
+
+.dashboard {
+    min-height: 100vh;
+
+    background: var(--background);
+
+    color: var(--text);
 }
 
-.dashboard-body{
-    display:flex;
+.dashboard-body {
+    display: flex;
 }
 
-.dashboard-content{
-    flex:1;
+.dashboard-content {
+    flex: 1;
 
-    margin-left:230px;
+    margin-left: 230px;
 
-    padding:120px 40px 40px 40px;
+    padding: 120px 40px 40px;
 
-    background:linear-gradient(
+    background: linear-gradient(
         135deg,
-        #fcfaf7,
-        #f6efe7
+        #0A0F16,
+        #0D141C
     );
 
-    min-height:100vh;
-}
-/* =======================
-      Welcome
-======================= */
+    min-height: 100vh;
 
-.welcome-section{
-    margin-bottom:32px;
+    color: var(--text);
 }
 
-.welcome-section h1{
-    font-size:40px;
-    font-family:var(--font-heading);
-    color:var(--coffee);
-    margin-bottom:8px;
-}
-
-.welcome-section p{
-    color:#76695f;
-    font-size:16px;
-    margin-top:0;
-}
 
 /* =======================
-      Stats
+        WELCOME
 ======================= */
 
-.stats-section{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:24px;
+.welcome-section {
+    margin-bottom: 32px;
 }
 
-.stat-card{
-    background:rgba(255,255,255,.75);
-    backdrop-filter:blur(15px);
+.welcome-section h1 {
+    font-size: 34px;
 
-    border-radius:24px;
+    font-family: "Manrope", sans-serif;
 
-    padding:28px;
+    font-weight: 600;
+
+    color: #DDE3E8;
+
+    margin-bottom: 8px;
+}
+
+.welcome-section p {
+    color: #8F9BA8;
+
+    font-size: 15px;
+
+    margin-top: 0;
+}
+
+
+/* =======================
+        STATS
+======================= */
+
+.stats-section {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.stat-card {
+    background: #111821;
+
+    border: 1px solid #293540;
+
+    border-radius: 18px;
+
+    padding: 25px;
 
     box-shadow:
-    0 10px 35px rgba(0,0,0,.05);
+        0 10px 35px rgba(0, 0, 0, 0.25);
 
-    transition:.3s;
+    transition: 0.3s;
 }
 
-.stat-card:hover{
-    transform:translateY(-6px);
+.stat-card:hover {
+    transform: translateY(-5px);
+
+    background: #171F29;
+
+    border-color: #344657;
 }
 
-.stat-card h3{
-    font-size:16px;
-    color:#7d7065;
-    margin-bottom:18px;
-    font-weight:500;
+
+/* =======================
+      STAT LABEL
+======================= */
+
+.stat-card h3 {
+    font-size: 14px;
+
+    color: #8995A1;
+
+    margin-bottom: 16px;
+
+    font-weight: 500;
 }
 
-.stat-card h2{
-    font-size:42px;
-    color:var(--coffee);
-    margin-bottom:8px;
-    font-family:var(--font-heading);
+
+/* =======================
+      STAT NUMBER
+======================= */
+
+.stat-card h2 {
+    font-size: 34px;
+
+    color: #D5DCE2;
+
+    margin-bottom: 8px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-weight: 600;
 }
 
-.stat-card span{
-    color:#8f8278;
-    font-size:14px;
+
+/* =======================
+      STAT DESCRIPTION
+======================= */
+
+.stat-card span {
+    color: #737F8B;
+
+    font-size: 13px;
 }
