@@ -1,0 +1,312 @@
+.analytics{
+    min-height:100vh;
+    background:var(--cream);
+}
+
+.analytics-content{
+
+    margin-left:230px;
+
+    padding:120px 35px 35px;
+
+    min-height:100vh;
+
+    background:linear-gradient(
+        135deg,
+        #fcfaf7,
+        #f6efe7
+    );
+
+}
+
+/* ===========================
+        Header
+=========================== */
+
+.analytics-header{
+
+    margin-bottom:35px;
+
+}
+
+.analytics-header h1{
+
+    font-family:var(--font-heading);
+
+    font-size:30px;
+
+    color:var(--coffee);
+
+    margin-bottom:8px;
+
+}
+
+.analytics-header p{
+
+    color:#7A6E64;
+
+    font-size:16px;
+
+}
+
+/* ===========================
+        KPI Cards
+=========================== */
+
+.analytics-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+
+    margin-bottom:25px;
+
+}
+
+.analytics-card{
+
+    background:rgba(255,255,255,.78);
+
+    backdrop-filter:blur(16px);
+
+    border-radius:18px;
+
+    padding:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+    transition:.3s;
+
+}
+
+.analytics-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.08);
+
+}
+
+.analytics-card h3{
+
+    font-size:14px;
+
+    color:#7A6E64;
+
+    margin-bottom:12px;
+
+    font-weight:500;
+
+}
+
+.analytics-card h2{
+
+    font-size:30px;
+
+    color:var(--coffee);
+
+    font-family:var(--font-heading);
+
+    margin-bottom:6px;
+
+}
+
+.analytics-card span{
+
+    color:#8A7D72;
+
+    font-size:14px;
+
+}
+
+/* ===========================
+        Charts
+=========================== */
+
+.chart-section{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:24px;
+
+    margin-bottom:30px;
+
+}
+
+.chart-card{
+
+    background:rgba(255,255,255,.78);
+
+    backdrop-filter:blur(16px);
+
+    border-radius:22px;
+
+    padding:24px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.05);
+
+    transition:.3s;
+
+}
+
+.chart-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.chart-card h2{
+
+    font-family:var(--font-heading);
+
+    font-size:24px;
+
+    font-weight:600;
+
+    color:var(--coffee);
+
+    margin-bottom:16px;
+
+}
+
+.chart-placeholder{
+
+    height:280px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:2px dashed #E6DACE;
+
+    border-radius:18px;
+
+    color:#9A8E84;
+
+    font-size:20px;
+
+}
+
+/* ===========================
+      AI Insights
+=========================== */
+
+.insight-panel{
+
+    background:rgba(255,255,255,.78);
+
+    backdrop-filter:blur(16px);
+
+    border-radius:22px;
+
+    padding:28px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.05);
+
+}
+
+.insight-panel h2{
+
+    font-family:var(--font-heading);
+
+    font-size:24px;
+
+    font-weight:600;
+
+    color:var(--coffee);
+
+    margin-bottom:16px;
+
+}
+
+.insight-panel ul{
+
+    margin:0;
+
+    padding-left:20px;
+
+}
+
+.insight-panel li{
+
+    margin-bottom:16px;
+
+    color:#6F6258;
+
+    line-height:1.8;
+
+}
+
+/* ===========================
+      Responsive
+=========================== */
+
+@media(max-width:1000px){
+
+    .analytics-stats{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .chart-section{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:700px){
+
+    .analytics-stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+.analytics-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.analytics-row{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    padding:14px 16px;
+    border-radius:14px;
+    background:#F8F3EC;
+    border:1px solid #E7DDD2;
+}
+
+.analytics-row strong{
+    color:var(--coffee);
+}
+
+.analytics-row span{
+    color:#7A6E64;
+    font-size:13px;
+}
+
+
+.query-error{
+    margin-bottom:20px;
+    padding:13px 16px;
+    border:1px solid #E1C8B8;
+    border-radius:14px;
+    background:#FFF4ED;
+    color:#7A4933;
+    font-size:14px;
+}

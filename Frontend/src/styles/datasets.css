@@ -1,0 +1,344 @@
+.datasets{
+    min-height:100vh;
+    background:var(--cream);
+}
+
+.datasets-content{
+
+    margin-left:230px;
+
+    padding:120px 35px 35px;
+
+    min-height:100vh;
+
+    background:linear-gradient(
+        135deg,
+        #fcfaf7,
+        #f6efe7
+    );
+}
+
+/* ===========================
+        Header
+=========================== */
+
+.datasets-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.datasets-header h1{
+
+    font-family:var(--font-heading);
+
+    font-size:30px;
+
+    color:var(--coffee);
+
+    margin-bottom:6px;
+
+}
+
+.datasets-header p{
+
+    color:#7A6E64;
+
+    font-size:16px;
+
+}
+
+/* ===========================
+      Upload Button
+=========================== */
+
+.upload-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    border:none;
+
+    background:#6D4C41;
+
+    color:white;
+
+    padding:14px 22px;
+
+    border-radius:16px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.upload-btn:hover{
+
+    background:#5B3F35;
+
+    transform:translateY(-2px);
+
+}
+
+/* ===========================
+        Search
+=========================== */
+
+.search-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:white;
+
+    padding:14px 18px;
+
+    border-radius:16px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.05);
+
+    margin-bottom:28px;
+
+}
+
+.search-box input{
+
+    border:none;
+
+    outline:none;
+
+    width:100%;
+
+    font-size:15px;
+
+    background:transparent;
+
+}
+
+/* ===========================
+      Dataset Cards
+=========================== */
+
+.dataset-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.dataset-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.78);
+
+    backdrop-filter:blur(16px);
+
+    padding:24px;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.05);
+
+    transition:.3s;
+
+}
+
+.dataset-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.08);
+
+}
+
+/* ===========================
+      Dataset Info
+=========================== */
+
+.dataset-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.file-icon{
+
+    width:42px;
+
+    height:42px;
+
+    color:var(--coffee);
+
+}
+
+.dataset-info h3{
+
+    margin:0;
+
+    font-size:22px;
+
+    font-family:var(--font-heading);
+
+    color:var(--coffee);
+
+}
+
+.dataset-info p{
+
+    margin-top:6px;
+
+    color:#8A7D72;
+
+    font-size:14px;
+
+}
+
+/* ===========================
+      Buttons
+=========================== */
+
+.dataset-actions{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+.dataset-actions button{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    border:none;
+
+    background:#EFE7DE;
+
+    color:var(--coffee);
+
+    padding:10px 16px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:14px;
+
+}
+
+.dataset-actions button:hover{
+
+    background:white;
+
+}
+
+.dataset-actions .delete{
+
+    background:#F8EAEA;
+
+    color:#B53E3E;
+
+}
+
+.dataset-actions .delete:hover{
+
+    background:#F3DADA;
+
+}
+
+.success-toast {
+  position: fixed;
+  top: 84px;
+  right: 28px;
+  z-index: 9999;
+  padding: 13px 18px;
+  border-radius: 12px;
+  background: #4f6f52;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0,0,0,.16);
+  animation: toastIn .2s ease-out;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 700px) {
+  .success-toast { left: 16px; right: 16px; top: 72px; text-align: center; }
+}
+
+
+/* ===========================
+   Success Toast
+=========================== */
+.success-toast{
+    position:fixed;
+    top:24px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:3000;
+    display:flex;
+    align-items:center;
+    gap:9px;
+    min-width:260px;
+    max-width:min(520px, calc(100vw - 32px));
+    padding:13px 20px;
+    border:1px solid #D8C4B2;
+    border-radius:999px;
+    background:rgba(255,250,244,.96);
+    color:#5A4030;
+    box-shadow:0 14px 35px rgba(74,53,39,.16);
+    backdrop-filter:blur(14px);
+    font-size:14px;
+    font-weight:600;
+    text-align:center;
+    animation:toastIn .25s ease-out;
+}
+
+.success-toast::first-letter{
+    color:#7B5B45;
+}
+
+@keyframes toastIn{
+    from{opacity:0; transform:translate(-50%, -10px);}
+    to{opacity:1; transform:translate(-50%, 0);}
+}

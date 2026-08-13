@@ -1,136 +1,110 @@
-import { useState } from "react";
-import axios from "axios";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import Datasets from "./pages/Datasets";
+import QueryAI from "./pages/QueryAI";
+import Analytics from "./pages/Analytics";
+import History from "./pages/History";
+import Settings from "./pages/Settings";
+import DatasetPreview from "./pages/DatasetPreview";
+import HistoryQuery from "./pages/HistoryQuery";
+import Profile from "./pages/Profile";
+import Notifications from "./pages/Notifications";
+import Security from "./pages/Security";
 
 function App() {
-  const [file, setFile] = useState(null);
-  const [preview, setPreview] = useState([]);
-  const [question, setQuestion] = useState("");
-  const [sql, setSql] = useState("");
-  const [results, setResults] = useState([]);
 
-  const uploadFile = async () => {
-    if (!file) {
-      alert("Please select a CSV file.");
-      return;
-    }
+  useEffect(() => {
 
-    const formData = new FormData();
-    formData.append("file", file);
+    const darkMode =
+      localStorage.getItem("darkMode") === "true";
 
-    try {
-      const response = await axios.post(
-        "http://127.0.0.1:8000/upload",
-        formData
-      );
-
-      alert("Upload successful!");
-      setPreview(response.data.preview);
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-      alert("Upload failed.");
-    }
-  };
-  const askQuestion = async () => {
-  try {
-    const response = await axios.post(
-      "http://127.0.0.1:8000/ask",
-      {
-        question: question,
-      }
+    document.body.classList.toggle(
+      "dark-mode",
+      darkMode
     );
 
-    setSql(response.data.generated_sql);
-    setResults(response.data.results);
-  } catch (error) {
-    console.error(error);
-    alert("Failed to get results.");
-  }
-  };
+  }, []);
 
   return (
-    <div style={{ padding: "40px", fontFamily: "Arial" }}>
-      <h1>🚀 QueryMind AI</h1>
+    <BrowserRouter>
 
-      <input
-        type="file"
-        accept=".csv"
-        onChange={(e) => setFile(e.target.files[0])}
-      />
+      <Routes>
 
-     <button onClick={uploadFile} style={{ marginLeft: "10px" }}>
-  Upload
-</button>
+        <Route path="/" element={<Login />} />
 
-<h2>Preview</h2>
+        <Route
+          path="/signup"
+          element={<Signup />}
+        />
 
-{preview.length > 0 && (
-  <table border="1" cellPadding="8">
-    <thead>
-      <tr>
-        <th>Product</th>
-        <th>Region</th>
-        <th>Sales</th>
-      </tr>
-    </thead>
+        <Route
+          path="/home"
+          element={<Home />}
+        />
 
-    <tbody>
-      {preview.map((row, index) => (
-        <tr key={index}>
-          <td>{row.product}</td>
-          <td>{row.region}</td>
-          <td>{row.sales}</td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
-)}
-<h2>Ask a Question</h2>
+        <Route
+          path="/dashboard"
+          element={<Dashboard />}
+        />
 
-<input
-  type="text"
-  value={question}
-  onChange={(e) => setQuestion(e.target.value)}
-  placeholder="e.g. Show all laptops"
-  style={{
-    width: "350px",
-    padding: "10px",
-    marginRight: "10px",
-  }}
-/>
+        <Route
+          path="/datasets"
+          element={<Datasets />}
+        />
 
-<button onClick={askQuestion}>
-  Ask
-</button>
+        <Route
+          path="/query"
+          element={<QueryAI />}
+        />
 
-<h2>Generated SQL</h2>
+        <Route
+          path="/analytics"
+          element={<Analytics />}
+        />
 
-<pre>{sql}</pre>
+        <Route
+          path="/history"
+          element={<History />}
+        />
 
-<h2>Results</h2>
+        <Route
+          path="/settings"
+          element={<Settings />}
+        />
 
-{results.length > 0 && (
-  <table border="1" cellPadding="8">
-    <thead>
-      <tr>
-        {Object.keys(results[0]).map((key) => (
-          <th key={key}>{key}</th>
-        ))}
-      </tr>
-    </thead>
+        <Route
+          path="/data/:tableName"
+          element={<DatasetPreview />}
+        />
 
-    <tbody>
-      {results.map((row, index) => (
-        <tr key={index}>
-          {Object.values(row).map((value, i) => (
-            <td key={i}>{value}</td>
-          ))}
-        </tr>
-      ))}
-    </tbody>
-  </table>
-)}
-    </div>
+        <Route
+          path="/history/query/:queryId"
+          element={<HistoryQuery />}
+        />
+
+        <Route
+          path="/profile"
+          element={<Profile />}
+        />
+
+        <Route
+          path="/notifications"
+          element={<Notifications />}
+        />
+
+        <Route
+          path="/security"
+          element={<Security />}
+        />
+
+      </Routes>
+
+    </BrowserRouter>
   );
 }
 

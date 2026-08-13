@@ -1,0 +1,466 @@
+.settings-page{
+    min-height:100vh;
+    background:var(--cream);
+}
+
+.settings-content{
+
+    margin-left:230px;
+
+    padding:120px 35px 35px;
+
+    min-height:100vh;
+
+    background:linear-gradient(
+        135deg,
+        #fcfaf7,
+        #f6efe7
+    );
+
+}
+
+/* =======================
+        Header
+======================= */
+
+.settings-header{
+
+    margin-bottom:35px;
+
+}
+
+.settings-header h1{
+
+    font-family:var(--font-heading);
+
+    font-size:30px;
+
+    color:var(--coffee);
+
+    margin-bottom:8px;
+
+}
+
+.settings-header p{
+
+    color:#7A6E64;
+
+}
+
+/* =======================
+        Cards
+======================= */
+
+.settings-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.setting-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px  22px;
+
+    background:rgba(255,255,255,.78);
+
+    backdrop-filter:blur(16px);
+
+    border-radius:22px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.05);
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+.setting-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.08);
+
+}
+
+.setting-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.setting-left svg{
+
+    color:var(--coffee);
+
+    width:22px;
+
+    height:22px;
+
+}
+
+.setting-left h3{
+
+    font-size:20px;
+
+    margin:0;
+
+    color:var(--coffee);
+
+    font-family:var(--font-heading);
+
+}
+
+.setting-left p{
+
+    margin-top:4px;
+
+    color:#8A7D72;
+
+    font-size:13px;
+
+}
+
+.setting-card>svg{
+
+    color:#8A7D72;
+
+}
+
+.logout{
+
+    border:1px solid #EBCFCF;
+
+}
+
+.logout .setting-left svg,
+.logout h3{
+
+    color:#C0392B;
+
+}
+
+/* =========================
+       DARK MODE
+========================= */
+
+body.dark-mode {
+    background: #1f1b18;
+    color: #f5eee8;
+}
+
+body.dark-mode .settings-page {
+    background: #1f1b18;
+}
+
+body.dark-mode .settings-content {
+    background: linear-gradient(
+        135deg,
+        #24201d,
+        #302923
+    );
+}
+
+body.dark-mode .settings-header h1 {
+    color: #f5eee8;
+}
+
+body.dark-mode .settings-header p {
+    color: #c5b9ae;
+}
+
+body.dark-mode .setting-card {
+    background: rgba(55, 47, 41, 0.9);
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
+
+body.dark-mode .setting-left h3 {
+    color: #f5eee8;
+}
+
+body.dark-mode .setting-left p {
+    color: #c5b9ae;
+}
+
+body.dark-mode .setting-left svg {
+    color: #d8bfa8;
+}
+
+body.dark-mode .setting-card > svg {
+    color: #c5b9ae;
+}
+
+/* =========================
+      NOTIFICATIONS
+========================= */
+
+.notification-option {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #eadfd5;
+
+    gap: 20px;
+
+}
+
+.notification-option:last-of-type {
+    border-bottom: none;
+}
+
+.notification-option h3 {
+
+    margin: 0;
+
+    color: var(--coffee);
+
+    font-family: var(--font-heading);
+
+    font-size: 17px;
+
+}
+
+.notification-option p {
+
+    margin-top: 5px;
+
+    color: #8A7D72;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================
+          SWITCH
+========================= */
+
+.switch {
+
+    position: relative;
+
+    width: 48px;
+
+    height: 26px;
+
+    flex-shrink: 0;
+
+}
+
+.switch input {
+
+    opacity: 0;
+
+    width: 0;
+
+    height: 0;
+
+}
+
+.slider {
+
+    position: absolute;
+
+    cursor: pointer;
+
+    inset: 0;
+
+    background: #d8cec5;
+
+    border-radius: 30px;
+
+    transition: .3s;
+
+}
+
+.slider:before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+
+    height: 20px;
+
+    left: 3px;
+
+    top: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    transition: .3s;
+
+}
+
+.switch input:checked + .slider {
+
+    background: var(--coffee);
+
+}
+
+.switch input:checked + .slider:before {
+
+    transform: translateX(22px);
+
+}
+
+
+/* =========================
+        DARK MODE
+========================= */
+
+body.dark-mode .notification-option {
+
+    border-bottom-color: #4a4038;
+
+}
+
+body.dark-mode .notification-option h3 {
+
+    color: #f5eee8;
+
+}
+
+body.dark-mode .notification-option p {
+
+    color: #c5b9ae;
+
+}
+
+body.dark-mode .slider {
+
+    background: #5b5149;
+
+}
+
+/* =========================
+        SECURITY
+========================= */
+
+.password-field {
+    margin-bottom: 18px;
+}
+
+.password-field label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--coffee);
+    font-size: 14px;
+}
+
+.password-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #ddd3ca;
+    border-radius: 12px;
+    background: white;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.password-input input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 12px 14px;
+    font-size: 14px;
+    background: transparent;
+}
+
+.password-input button {
+    border: none;
+    background: transparent;
+    color: #8A7D72;
+    cursor: pointer;
+    padding: 10px 14px;
+}
+
+.password-input button:hover {
+    color: var(--coffee);
+}
+
+.security-error {
+    margin-top: 10px;
+    padding: 11px 14px;
+    border-radius: 10px;
+    background: #fff0f0;
+    color: #c0392b;
+    font-size: 13px;
+}
+
+.security-success {
+    margin-top: 10px;
+    padding: 11px 14px;
+    border-radius: 10px;
+    background: #eef8f0;
+    color: #287a3e;
+    font-size: 13px;
+}
+
+.security-save {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 18px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 12px;
+    background: var(--coffee);
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.security-save:hover {
+    opacity: 0.9;
+}
+
+
+/* DARK MODE */
+
+body.dark-mode .password-input {
+    background: #302923;
+    border-color: #51463e;
+}
+
+body.dark-mode .password-input input {
+    color: #f5eee8;
+}
+
+body.dark-mode .password-field label {
+    color: #f5eee8;
+}
+
+body.dark-mode .security-error {
+    background: #3b2525;
+}
+
+body.dark-mode .security-success {
+    background: #25372a;
+}

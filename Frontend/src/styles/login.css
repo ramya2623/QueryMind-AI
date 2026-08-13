@@ -1,0 +1,495 @@
+.login-page{
+    width:100%;
+    height:100vh;
+
+    display:flex;
+
+    background:#F8F4EF;
+}
+
+.login-left{
+
+    width:55%;
+
+    background:linear-gradient(
+135deg,
+#EDE3D8,
+#F5EFE7,
+#E8DDD0
+);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:80px;
+    
+    position:relative;
+
+    overflow:hidden;
+}
+
+.brand{
+
+position:relative;
+
+z-index:5;
+
+max-width:520px;
+
+}
+
+.brand h1{
+
+font-family:"Cormorant Garamond",serif;
+
+font-size:76px;
+
+font-weight:700;
+
+line-height:1;
+
+color:#3A291F;
+
+margin-bottom:18px;
+
+}
+
+.tagline{
+
+font-size:15px;
+
+letter-spacing:5px;
+
+font-weight:600;
+
+text-transform:uppercase;
+
+color:#8B6F5A;
+
+margin-bottom:35px;
+
+}
+
+.description{
+
+font-size:19px;
+
+line-height:1.9;
+
+max-width:480px;
+
+color:#65584C;
+
+}
+
+.login-right{
+
+    width:45%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#F8F4EF;
+}
+
+.login-card{
+
+    width:430px;
+
+    background:white;
+
+    padding:50px;
+
+    border-radius:25px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.08);
+}
+
+.login-card h2{
+    font-size:35px;
+    font-family:var(--font-heading);
+    color:var(--coffee);
+    margin-bottom:8px;
+}
+
+.login-card p{
+
+    color:#8B7B71;
+}
+.login-logo{
+
+width:70px;
+
+height:70px;
+
+border-radius:20px;
+
+background:#EFE3D6;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:35px;
+
+margin-bottom:25px;
+
+}
+
+.subtitle{
+
+width:80%;
+
+margin-bottom:30px;
+
+color:#85776D;
+
+}
+
+form{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+label{
+
+margin-bottom:8px;
+
+margin-top:15px;
+
+font-weight:600;
+
+color:#4D3C2F;
+
+}
+
+.login-card input{
+    width:100%;
+    padding:15px 18px;
+    margin-bottom:24px;
+    border:1px solid #E6DDD2;
+    border-radius:14px;
+    background:#FCFAF7;
+    outline:none;
+    font-size:15px;
+    transition:.3s;
+}
+
+.login-card input:focus{
+    border-color:#8D6B50;
+    box-shadow:0 0 0 4px rgba(141,107,80,.12);
+}
+
+.login-btn{
+    width:100%;
+    padding:15px;
+    margin-top:24px;
+    border:none;
+    border-radius:14px;
+    background:#5A3E2B;
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all .3s ease;
+    box-shadow:0 10px 25px rgba(90,62,43,.25);
+}
+
+.login-btn:hover{
+    transform:translateY(-2px);
+    background:#4A3527;
+}
+
+.login-btn:hover{
+
+background:#6D4C36;
+
+}
+
+.divider{
+
+text-align:center;
+
+margin:28px 0;
+
+position:relative;
+
+}
+
+.divider span{
+
+background:white;
+
+padding:0 18px;
+
+color:#999;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.divider::before{
+
+content:"";
+
+position:absolute;
+
+top:50%;
+
+left:0;
+
+width:100%;
+
+height:1px;
+
+background:#E8DED2;
+
+}
+
+.google-btn{
+
+padding:15px;
+
+background:#FFF8F1;
+
+border:1px solid #DDD2C4;
+
+border-radius:14px;
+
+font-weight:600;
+
+}
+
+.google-btn:hover{
+
+background:#F6EEE6;
+
+}
+
+.signup-text{
+
+margin-top:28px;
+
+text-align:center;
+
+color:#777;
+
+}
+
+.signup-text a{
+
+margin-left:8px;
+
+color:#5A3E2B;
+
+font-weight:700;
+
+}
+/* Decorative Circles */
+
+.circle{
+
+position:absolute;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.35);
+
+backdrop-filter:blur(5px);
+
+}
+
+.circle1{
+
+width:220px;
+
+height:220px;
+
+top:-60px;
+
+left:-70px;
+
+}
+
+.circle2{
+
+width:140px;
+
+height:140px;
+
+bottom:120px;
+
+right:90px;
+
+}
+
+.circle3{
+
+width:80px;
+
+height:80px;
+
+top:180px;
+
+right:120px;
+
+}
+
+/* Feature Card */
+
+.hero-card{
+
+margin-top:40px;
+
+background:rgba(255,255,255,.55);
+
+backdrop-filter:blur(12px);
+
+padding:34px;
+
+border-radius:20px;
+
+border:1px solid rgba(255,255,255,.5);
+
+width:420px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.hero-icon{
+
+width:60px;
+
+height:60px;
+
+border-radius:18px;
+
+background:white;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:28px;
+
+margin-bottom:20px;
+
+color:#5A3E2B;
+
+}
+
+.hero-card h3{
+
+font-size:24px;
+
+margin-bottom:12px;
+
+color:#3F2D21;
+
+font-family:"Cormorant Garamond",serif;
+
+}
+
+.hero-card p{
+
+line-height:1.8;
+
+color:#5F5146;
+
+}
+.features{
+
+margin-top:35px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.feature{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+padding:14px 18px;
+
+background:rgba(255,255,255,.45);
+
+border-radius:16px;
+
+border:1px solid rgba(255,255,255,.5);
+
+backdrop-filter:blur(8px);
+
+transition:.3s;
+
+}
+
+.feature:hover{
+
+transform:translateX(6px);
+
+background:white;
+
+}
+
+.feature span{
+
+font-size:24px;
+
+}
+
+.feature p{
+
+margin:0;
+
+font-weight:500;
+
+color:#4B3B30;
+
+}
+.password-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:18px;
+    margin-bottom:8px;
+}
+
+.password-header label{
+    color:#4A3527;
+    font-weight:600;
+}
+
+.password-header a{
+    color:#8D6B50;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+.password-header a:hover{
+    color:#4A3527;
+}

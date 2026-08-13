@@ -1,0 +1,126 @@
+.history-query-page {
+  min-height: 100vh;
+}
+
+.history-query-content {
+  margin-left: 250px;
+  padding: 100px 40px 40px;
+  max-width: 1100px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.history-query-header {
+  margin-bottom: 25px;
+}
+
+.history-query-header h1 {
+  margin-bottom: 8px;
+}
+
+.history-query-header p {
+  margin: 0;
+  opacity: 0.7;
+}
+
+.history-query-dataset {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  background: #f5eee5;
+}
+
+.history-query-dataset span {
+  font-size: 13px;
+  opacity: 0.65;
+}
+
+.history-query-dataset h3 {
+  margin: 4px 0 0;
+}
+
+.history-query-card,
+.history-insight-card {
+  background: white;
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 20px;
+  border: 1px solid #e8dfd5;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.card-title h3 {
+  margin: 0;
+}
+
+.question-text {
+  font-size: 16px;
+  margin: 0;
+}
+
+.sql-result {
+  margin: 0;
+  padding: 18px;
+  border-radius: 10px;
+  background: #f7f3ee;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.results-table-wrapper {
+  overflow-x: auto;
+}
+
+.results-table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.results-table-wrapper th,
+.results-table-wrapper td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.results-table-wrapper th {
+  font-weight: 600;
+}
+
+.no-results {
+  opacity: 0.65;
+}
+
+.history-insight-card {
+  background: #f5eee5;
+}
+
+.history-insight-card p {
+  line-height: 1.6;
+  margin: 0;
+}
+
+.query-error {
+  padding: 15px;
+  border-radius: 10px;
+  background: #f8e5e1;
+  margin-top: 20px;
+}

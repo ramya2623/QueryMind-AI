@@ -1,0 +1,181 @@
+.sidebar{
+
+    width:230px;
+
+    height:100vh;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    background:#EFE7DE;
+
+    padding:32px 20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    border-right:1px solid #E4D9CD;
+
+}
+
+/* ---------- Logo ---------- */
+
+/* ---------- Logo ---------- */
+
+/* ---------- Logo ---------- */
+
+.sidebar-logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:55px;
+}
+
+.sidebar-logo h2{
+    font-family:"Cormorant Garamond", serif;
+    color:#4A3527;
+    font-size:26px;
+    font-weight:600;
+    margin:0;
+    white-space:nowrap;
+    letter-spacing:-0.5px;
+}
+
+.brand-icon{
+    width:26px;
+    height:26px;
+    color:#6D4C41;
+    stroke-width:2.2;
+    flex-shrink:0;
+}
+/* ---------- Menu ---------- */
+
+.sidebar-menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.sidebar-menu a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    text-decoration:none;
+
+    color:#5F4A3C;
+
+    padding:14px 18px;
+
+    border-radius:16px;
+
+    transition:0.3s;
+
+    font-weight:500;
+
+    font-size:16px;
+
+}
+
+.sidebar-menu a:hover{
+
+    background:white;
+
+    transform:translateX(4px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+}
+
+.sidebar-menu a.active{
+    background:white;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+    color:var(--coffee);
+}
+
+/* ---------- Icons ---------- */
+
+.sidebar-menu svg{
+
+    width:20px;
+
+    height:20px;
+
+    stroke-width:2;
+
+}
+
+/* ---------- Footer ---------- */
+
+.sidebar-footer{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding-top:20px;
+
+    border-top:1px solid #E4D9CD;
+
+}
+
+.user-avatar{
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:50%;
+
+    background:#6D4C41;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:16px;
+
+    font-weight:600;
+
+}
+
+.sidebar-footer h4{
+
+    margin:0;
+
+    color:#4A3527;
+
+    font-size:16px;
+
+    font-weight:600;
+
+}
+
+.sidebar-footer p{
+
+    margin:2px 0 0;
+
+    color:#8A7C70;
+
+    font-size:12px;
+
+}

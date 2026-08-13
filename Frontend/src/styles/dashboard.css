@@ -1,0 +1,91 @@
+.dashboard{
+    min-height:100vh;
+    background:var(--cream);
+}
+
+.dashboard-body{
+    display:flex;
+}
+
+.dashboard-content{
+    flex:1;
+
+    margin-left:230px;
+
+    padding:120px 40px 40px 40px;
+
+    background:linear-gradient(
+        135deg,
+        #fcfaf7,
+        #f6efe7
+    );
+
+    min-height:100vh;
+}
+/* =======================
+      Welcome
+======================= */
+
+.welcome-section{
+    margin-bottom:32px;
+}
+
+.welcome-section h1{
+    font-size:40px;
+    font-family:var(--font-heading);
+    color:var(--coffee);
+    margin-bottom:8px;
+}
+
+.welcome-section p{
+    color:#76695f;
+    font-size:16px;
+    margin-top:0;
+}
+
+/* =======================
+      Stats
+======================= */
+
+.stats-section{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+}
+
+.stat-card{
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(15px);
+
+    border-radius:24px;
+
+    padding:28px;
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.05);
+
+    transition:.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-6px);
+}
+
+.stat-card h3{
+    font-size:16px;
+    color:#7d7065;
+    margin-bottom:18px;
+    font-weight:500;
+}
+
+.stat-card h2{
+    font-size:42px;
+    color:var(--coffee);
+    margin-bottom:8px;
+    font-family:var(--font-heading);
+}
+
+.stat-card span{
+    color:#8f8278;
+    font-size:14px;
+}

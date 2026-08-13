@@ -1,0 +1,41 @@
+:root{
+
+    --bg:#F8F3EC;
+
+    --surface:#FFFDF9;
+
+    --primary:#4A3527;
+
+    --secondary:#8D6B50;
+
+    --accent:#D6BEA6;
+
+    --border:#E7DED2;
+
+    --text:#34261D;
+
+    --muted:#77695E;
+
+    --shadow:0 15px 40px rgba(74,53,39,.10);
+
+    --radius:22px;
+
+}
+
+body{
+
+    margin:0;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:"Inter",sans-serif;
+
+}
+
+h1,h2,h3{
+
+    font-family:"Cormorant Garamond",serif;
+
+}
