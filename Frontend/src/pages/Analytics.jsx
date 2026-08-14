@@ -5,11 +5,34 @@ import "../styles/analytics.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+import {
+    ResponsiveContainer,
+    BarChart,
+    Bar,
+    XAxis,
+    YAxis,
+    CartesianGrid,
+    Tooltip,
+    PieChart,
+    Pie,
+    Cell,
+    Legend
+} from "recharts";
+
+
 function Analytics() {
 
     const [analytics, setAnalytics] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
+    const CHART_COLORS = [
+    "#4F7CAC",
+    "#6D8EAA",
+    "#8FA8BD",
+    "#5F7F9B",
+    "#7896AE",
+    "#A1B5C5"
+];
 
     useEffect(() => {
 
@@ -36,6 +59,7 @@ function Analytics() {
                 setLoading(false);
 
             }
+
         };
 
         fetchAnalytics();
@@ -105,6 +129,25 @@ function Analytics() {
     }
 
 
+    const productData = analytics?.sales_by_product || [];
+    const regionData = analytics?.sales_by_region || [];
+
+
+    /*
+        QueryMind AI warm earthy palette
+    */
+    const chartColors = [
+        "#8B6F5A",
+        "#A88B73",
+        "#C4A88A",
+        "#6F6258",
+        "#B89A7A",
+        "#927B68",
+        "#D1B79A",
+        "#7A6E64"
+    ];
+
+
     return (
 
         <div className="analytics">
@@ -114,6 +157,7 @@ function Analytics() {
             <Navbar />
 
             <div className="analytics-content">
+
 
                 {/* HEADER */}
 
@@ -128,11 +172,9 @@ function Analytics() {
                 </div>
 
 
-                {/* STAT CARDS */}
+                {/* MAIN STAT CARDS */}
 
                 <div className="analytics-stats">
-
-                    {/* REVENUE */}
 
                     <div className="analytics-card">
 
@@ -151,8 +193,6 @@ function Analytics() {
                     </div>
 
 
-                    {/* SALES */}
-
                     <div className="analytics-card">
 
                         <h3>Total Sales</h3>
@@ -170,8 +210,6 @@ function Analytics() {
                     </div>
 
 
-                    {/* ORDERS */}
-
                     <div className="analytics-card">
 
                         <h3>Orders</h3>
@@ -188,8 +226,6 @@ function Analytics() {
 
                     </div>
 
-
-                    {/* CUSTOMERS */}
 
                     <div className="analytics-card">
 
@@ -210,7 +246,7 @@ function Analytics() {
                 </div>
 
 
-                {/* SECONDARY INFORMATION */}
+                {/* SECONDARY STAT CARDS */}
 
                 <div className="analytics-stats">
 
@@ -284,32 +320,172 @@ function Analytics() {
                 </div>
 
 
-                {/* CHART SECTION */}
+                {/* CHARTS */}
 
                 <div className="chart-section">
 
+
+                    {/* SALES BY PRODUCT */}
+
                     <div className="chart-card">
 
-                        <h2>Revenue Trend</h2>
+                        <h2>Sales by Product</h2>
 
-                        <div className="chart-placeholder">
+                        {productData.length > 0 ? (
 
-                            📈 Chart Coming Soon
+                            <div className="chart-wrapper">
 
-                        </div>
+                                <ResponsiveContainer
+                                    width="100%"
+                                    height={300}
+                                >
+
+                                    <BarChart
+                                        data={productData}
+                                        margin={{
+                                            top: 10,
+                                            right: 20,
+                                            left: 0,
+                                            bottom: 10
+                                        }}
+                                    >
+
+                                        <CartesianGrid
+                                            strokeDasharray="3 3"
+                                            stroke="var(--chart-grid)"
+                                        />
+
+                                        <XAxis
+                                            dataKey="name"
+                                            tick={{
+                                                fill: "var(--chart-text)"
+                                            }}
+                                            axisLine={{
+                                                stroke: "var(--chart-axis)"
+                                            }}
+                                            tickLine={false}
+                                        />
+
+                                        <YAxis
+                                            tick={{
+                                                fill: "var(--chart-text)"
+                                            }}
+                                            axisLine={{
+                                                stroke: "var(--chart-axis)"
+                                            }}
+                                            tickLine={false}
+                                        />
+
+                                       <Tooltip
+    cursor={false}
+    formatter={(value) =>
+        `₹${Number(value).toLocaleString("en-IN")}`
+    }
+/>
+
+                                      <Bar
+    dataKey="value"
+    name="Sales"
+    fill="#4F7CAC"
+    radius={[8, 8, 0, 0]}
+    activeBar={false}
+/>
+
+                                    </BarChart>
+
+                                </ResponsiveContainer>
+
+                            </div>
+
+                        ) : (
+
+                            <div className="chart-empty">
+                                No product data available.
+                            </div>
+
+                        )}
 
                     </div>
 
 
+                    {/* SALES BY REGION */}
+
                     <div className="chart-card">
 
-                        <h2>Sales by Category</h2>
+                        <h2>Sales by Region</h2>
 
-                        <div className="chart-placeholder">
+                        {regionData.length > 0 ? (
 
-                            🥧 Chart Coming Soon
+                            <div className="chart-wrapper">
 
-                        </div>
+                                <ResponsiveContainer
+                                    width="100%"
+                                    height={300}
+                                >
+
+                                    <PieChart>
+
+                                        <Pie
+    data={regionData}
+    dataKey="value"
+    nameKey="name"
+    cx="50%"
+    cy="50%"
+    outerRadius={100}
+    innerRadius={55}
+    paddingAngle={3}
+    activeShape={false}
+>
+
+                                            {regionData.map(
+                                                (entry, index) => (
+
+                                                    <Cell
+                                                        key={`cell-${index}`}
+                                                        fill={
+                                                            chartColors[
+                                                                index %
+                                                                chartColors.length
+                                                            ]
+                                                        }
+                                                    />
+
+                                                )
+                                            )}
+
+                                        </Pie>
+
+                                        <Tooltip
+                                            contentStyle={{
+                                                background: "var(--chart-tooltip-bg)",
+                                                border: "1px solid var(--chart-tooltip-border)",
+                                                borderRadius: "12px",
+                                                color: "var(--chart-tooltip-text)"
+                                            }}
+                                            formatter={(value) =>
+                                                `₹${Number(value).toLocaleString("en-IN")}`
+                                            }
+                                        />
+
+                                        <Legend
+                                            wrapperStyle={{
+                                                color: "var(--chart-text)"
+                                            }}
+                                        />
+
+                                    </PieChart>
+
+                                </ResponsiveContainer>
+
+                            </div>
+
+                        ) : (
+
+                            <div className="chart-empty">
+                                No region data available.
+                            </div>
+
+                        )}
 
                     </div>
 
@@ -332,7 +508,7 @@ function Analytics() {
                         <li>
                             📋 Your datasets contain{" "}
                             {Number(
-                                analytics.total_rows
+                                analytics.total_rows || 0
                             ).toLocaleString("en-IN")}{" "}
                             total records.
                         </li>
@@ -340,7 +516,7 @@ function Analytics() {
                         <li>
                             🤖 QueryMind AI has answered{" "}
                             {Number(
-                                analytics.total_questions
+                                analytics.total_questions || 0
                             ).toLocaleString("en-IN")}{" "}
                             questions.
                         </li>
@@ -356,6 +532,7 @@ function Analytics() {
 
                 </div>
 
+
             </div>
 
         </div>
@@ -363,5 +540,6 @@ function Analytics() {
     );
 
 }
+
 
 export default Analytics;

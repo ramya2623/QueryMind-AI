@@ -713,19 +713,11 @@ def get_analytics():
 
             except Exception:
 
-                try:
-
-                    columns = eval(row[0])
-
-                    total_columns += len(columns)
-
-                except Exception:
-
-                    pass
+                pass
 
 
         # --------------------------------------------------
-        # FINANCIAL + BUSINESS ANALYTICS
+        # BUSINESS ANALYTICS
         # --------------------------------------------------
 
         total_sales = 0
@@ -734,7 +726,18 @@ def get_analytics():
         total_customers = 0
 
 
-        # Get only tables belonging to uploaded datasets
+        # --------------------------------------------------
+        # CHART DATA
+        # --------------------------------------------------
+
+        product_sales = {}
+        region_sales = {}
+
+
+        # --------------------------------------------------
+        # GET ALL UPLOADED DATASETS
+        # --------------------------------------------------
+
         datasets = conn.execute(
             """
             SELECT table_name
@@ -749,9 +752,9 @@ def get_analytics():
 
             try:
 
-                # ------------------------------------------
+                # --------------------------------------------------
                 # GET COLUMN NAMES
-                # ------------------------------------------
+                # --------------------------------------------------
 
                 table_info = conn.execute(
                     f'PRAGMA table_info("{table_name}")'
@@ -768,9 +771,9 @@ def get_analytics():
                 }
 
 
-                # ------------------------------------------
+                # --------------------------------------------------
                 # FIND SALES COLUMN
-                # ------------------------------------------
+                # --------------------------------------------------
 
                 sales_column = None
 
@@ -790,9 +793,9 @@ def get_analytics():
                         break
 
 
-                # ------------------------------------------
+                # --------------------------------------------------
                 # FIND REVENUE COLUMN
-                # ------------------------------------------
+                # --------------------------------------------------
 
                 revenue_column = None
 
@@ -812,9 +815,9 @@ def get_analytics():
                         break
 
 
-                # ------------------------------------------
-                # CALCULATE SALES
-                # ------------------------------------------
+                # --------------------------------------------------
+                # TOTAL SALES
+                # --------------------------------------------------
 
                 if sales_column:
 
@@ -830,9 +833,9 @@ def get_analytics():
                     total_sales += result or 0
 
 
-                # ------------------------------------------
-                # CALCULATE REVENUE
-                # ------------------------------------------
+                # --------------------------------------------------
+                # TOTAL REVENUE
+                # --------------------------------------------------
 
                 if revenue_column:
 
@@ -847,13 +850,10 @@ def get_analytics():
 
                     total_revenue += result or 0
 
-
-                # ------------------------------------------
-                # IF THERE IS NO REVENUE COLUMN,
-                # USE SALES AS REVENUE
-                # ------------------------------------------
-
                 elif sales_column:
+
+                    # If no revenue column exists,
+                    # use sales as revenue.
 
                     result = conn.execute(
                         f'''
@@ -867,9 +867,110 @@ def get_analytics():
                     total_revenue += result or 0
 
 
-                # ------------------------------------------
+                # --------------------------------------------------
+                # FIND PRODUCT COLUMN
+                # --------------------------------------------------
+
+                product_column = None
+
+                product_names = [
+                    "product",
+                    "product_name",
+                    "item",
+                    "item_name",
+                    "productname"
+                ]
+
+                for name in product_names:
+
+                    if name in lower_columns:
+
+                        product_column = lower_columns[name]
+
+                        break
+
+
+                # --------------------------------------------------
+                # SALES BY PRODUCT
+                # --------------------------------------------------
+
+                if product_column and sales_column:
+
+                    rows = conn.execute(
+                        f'''
+                        SELECT
+                            "{product_column}",
+                            COALESCE(SUM("{sales_column}"), 0)
+                        FROM "{table_name}"
+                        WHERE "{product_column}" IS NOT NULL
+                        GROUP BY "{product_column}"
+                        '''
+                    ).fetchall()
+
+
+                    for product, value in rows:
+
+                        product_name = str(product).strip()
+
+                        product_sales[product_name] = (
+                            product_sales.get(product_name, 0)
+                            + (value or 0)
+                        )
+
+
+                # --------------------------------------------------
+                # FIND REGION COLUMN
+                # --------------------------------------------------
+
+                region_column = None
+
+                region_names = [
+                    "region",
+                    "area",
+                    "zone",
+                    "location"
+                ]
+
+                for name in region_names:
+
+                    if name in lower_columns:
+
+                        region_column = lower_columns[name]
+
+                        break
+
+
+                # --------------------------------------------------
+                # SALES BY REGION
+                # --------------------------------------------------
+
+                if region_column and sales_column:
+
+                    rows = conn.execute(
+                        f'''
+                        SELECT
+                            "{region_column}",
+                            COALESCE(SUM("{sales_column}"), 0)
+                        FROM "{table_name}"
+                        WHERE "{region_column}" IS NOT NULL
+                        GROUP BY "{region_column}"
+                        '''
+                    ).fetchall()
+
+
+                    for region, value in rows:
+
+                        region_name = str(region).strip()
+
+                        region_sales[region_name] = (
+                            region_sales.get(region_name, 0)
+                            + (value or 0)
+                        )
+
+
+                # --------------------------------------------------
                 # FIND ORDER COLUMN
-                # ------------------------------------------
+                # --------------------------------------------------
 
                 order_column = None
 
@@ -890,9 +991,9 @@ def get_analytics():
                         break
 
 
-                # ------------------------------------------
+                # --------------------------------------------------
                 # COUNT ORDERS
-                # ------------------------------------------
+                # --------------------------------------------------
 
                 if order_column:
 
@@ -909,9 +1010,6 @@ def get_analytics():
 
                 else:
 
-                    # If there is no order ID,
-                    # use number of rows as a fallback.
-
                     result = conn.execute(
                         f'''
                         SELECT COUNT(*)
@@ -922,9 +1020,9 @@ def get_analytics():
                     total_orders += result or 0
 
 
-                # ------------------------------------------
+                # --------------------------------------------------
                 # FIND CUSTOMER COLUMN
-                # ------------------------------------------
+                # --------------------------------------------------
 
                 customer_column = None
 
@@ -946,9 +1044,9 @@ def get_analytics():
                         break
 
 
-                # ------------------------------------------
-                # COUNT UNIQUE CUSTOMERS
-                # ------------------------------------------
+                # --------------------------------------------------
+                # COUNT CUSTOMERS
+                # --------------------------------------------------
 
                 if customer_column:
 
@@ -973,23 +1071,45 @@ def get_analytics():
 
 
         # --------------------------------------------------
-        # CURRENT DATASET WITH ONLY "SALES"
-        # --------------------------------------------------
-        #
-        # For your current CSV:
-        #
-        # product
-        # region
-        # sales
-        #
-        # sales = revenue
-        # rows = orders
-        # customers = 0
-        #
-        # This is intentional because the CSV has
-        # no customer information.
+        # FORMAT CHART DATA
         # --------------------------------------------------
 
+        sales_by_product = [
+            {
+                "name": product,
+                "value": value
+            }
+            for product, value in product_sales.items()
+        ]
+
+
+        sales_by_region = [
+            {
+                "name": region,
+                "value": value
+            }
+            for region, value in region_sales.items()
+        ]
+
+
+        # --------------------------------------------------
+        # SORT CHART DATA
+        # --------------------------------------------------
+
+        sales_by_product.sort(
+            key=lambda x: x["value"],
+            reverse=True
+        )
+
+        sales_by_region.sort(
+            key=lambda x: x["value"],
+            reverse=True
+        )
+
+
+        # --------------------------------------------------
+        # RETURN ANALYTICS
+        # --------------------------------------------------
 
         return {
 
@@ -1007,7 +1127,11 @@ def get_analytics():
 
             "orders": total_orders,
 
-            "customers": total_customers
+            "customers": total_customers,
+
+            "sales_by_product": sales_by_product,
+
+            "sales_by_region": sales_by_region
 
         }
 
