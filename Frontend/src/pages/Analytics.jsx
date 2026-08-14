@@ -40,9 +40,9 @@ function Analytics() {
 
             try {
 
-                const response = await axios.get(
-                    "http://127.0.0.1:8000/analytics"
-                );
+               const response = await axios.get(
+    "https://querymind-ai-vwp2.onrender.com/analytics"
+);
 
                 console.log("Analytics:", response.data);
 
