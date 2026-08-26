@@ -1,275 +1,395 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=DM+Serif+Display&display=swap');
-html, body, #root {
-  min-height: 100%;
+@import url(
+  'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap'
+);
+
+
+/* =========================================================
+   QUERYMIND AI — GLOBAL STYLES
+   PERMANENT DARK THEME
+========================================================= */
+
+html,
+body,
+#root {
+    min-height: 100%;
+    margin: 0;
 }
+
+
+* {
+    box-sizing: border-box;
+}
+
 
 body {
-  margin: 0;
-  font-family: "Manrope", sans-serif;
-  background: var(--bg);
-}
+    margin: 0;
 
-/* =====================================================
-   QUERYMIND AI — GLOBAL DARK THEME
-===================================================== */
+    font-family: "Manrope", sans-serif;
 
-body.dark-mode,
-body.dark-mode #root {
-    background: var(--background);
-    color: var(--text);
+    background: #080D14;
+
+    color: #E7EDF3;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 
-/* ===============================
-   PAGE BACKGROUNDS
-================================ */
+/* =========================================================
+   GLOBAL COLORS
+========================================================= */
 
-body.dark-mode .dashboard-page,
-body.dark-mode .analytics-page,
-body.dark-mode .query-page,
-body.dark-mode .history-page,
-body.dark-mode .datasets-page,
-body.dark-mode .settings-page {
-    background: var(--background);
+:root {
+
+    /* Backgrounds */
+
+    --background: #080D14;
+
+    --sidebar: #0B121A;
+
+    --surface: #101923;
+
+    --surface-elevated: #111C27;
+
+    --surface-hover: #172330;
+
+
+    /* Borders */
+
+    --border: #263543;
+
+    --border-hover: #34495B;
+
+
+    /* Brand */
+
+    --primary: #5D94C2;
+
+    --primary-hover: #6FA4CF;
+
+    --primary-dark: #315F85;
+
+
+    /* Text */
+
+    --text: #E7EDF3;
+
+    --text-light: #8F9EAE;
+
+    --text-muted: #657587;
+
+
+    /* Other */
+
+    --danger: #D9A5AA;
+
+    --danger-bg: #302A32;
+
+    --shadow:
+        0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
 
-/* ===============================
-   CONTENT AREAS
-================================ */
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
 
-body.dark-mode .dashboard-content,
-body.dark-mode .analytics-content,
-body.dark-mode .query-content,
-body.dark-mode .history-content,
-body.dark-mode .datasets-content,
-body.dark-mode .settings-content {
-    background: var(--background);
-    color: var(--text);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Sora", sans-serif;
+
+    color: #E7EDF3;
+
+    margin-top: 0;
 }
 
 
-/* ===============================
-   SIDEBAR
-================================ */
-
-body.dark-mode .sidebar {
-    background: var(--sidebar) !important;
-    color: var(--text);
-    border-right: 1px solid var(--border);
-}
-
-body.dark-mode .sidebar *,
-body.dark-mode .sidebar h1,
-body.dark-mode .sidebar h2,
-body.dark-mode .sidebar h3,
-body.dark-mode .sidebar p,
-body.dark-mode .sidebar span {
-    color: var(--text);
-}
-
-body.dark-mode .sidebar a {
-    color: var(--text-light);
-}
-
-body.dark-mode .sidebar a:hover {
-    background: var(--surface-hover);
-    color: var(--text);
-}
-
-body.dark-mode .sidebar .active {
-    background: var(--surface-hover);
-    color: var(--primary);
+p {
+    color: #8F9EAE;
 }
 
 
-/* ===============================
-   NAVBAR
-================================ */
-
-body.dark-mode .navbar {
-    background: var(--sidebar) !important;
-    border-bottom: 1px solid var(--border);
-    color: var(--text);
-}
-
-body.dark-mode .navbar * {
-    color: var(--text);
+button,
+input,
+textarea,
+select {
+    font-family: "Manrope", sans-serif;
 }
 
 
-/* ===============================
-   HEADINGS
-================================ */
-
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode h4 {
-    color: var(--text);
-}
-
-
-/* ===============================
-   PARAGRAPHS
-================================ */
-
-body.dark-mode p {
-    color: var(--text-light);
-}
-
-
-/* ===============================
-   CARDS
-================================ */
-
-body.dark-mode .card,
-body.dark-mode .analytics-card,
-body.dark-mode .chart-card,
-body.dark-mode .setting-card,
-body.dark-mode .history-card,
-body.dark-mode .result-card,
-body.dark-mode .dataset-card,
-body.dark-mode .query-box,
-body.dark-mode .dataset-selector,
-body.dark-mode .insight-panel {
-    background: var(--surface-elevated) !important;
-    color: var(--text);
-    border-color: var(--border);
-    box-shadow: var(--shadow);
-}
-
-
-/* ===============================
-   INPUTS
-================================ */
-
-body.dark-mode input,
-body.dark-mode textarea,
-body.dark-mode select {
-    background: var(--surface) !important;
-    color: var(--text) !important;
-    border-color: var(--border) !important;
-}
-
-body.dark-mode input::placeholder,
-body.dark-mode textarea::placeholder {
-    color: var(--text-muted);
-}
-
-
-/* ===============================
-   SELECT OPTIONS
-================================ */
-
-body.dark-mode select option {
-    background: var(--surface);
-    color: var(--text);
-}
-
-
-/* ===============================
-   TABLES
-================================ */
-
-body.dark-mode table {
-    background: var(--surface-elevated);
-    color: var(--text);
-}
-
-body.dark-mode th {
-    background: var(--surface-hover);
-    color: var(--text);
-}
-
-body.dark-mode td {
-    color: var(--text-light);
-    border-color: var(--border);
-}
-
-body.dark-mode tr:hover {
-    background: var(--surface-hover);
-}
-
-
-/* ===============================
-   SQL RESULT
-================================ */
-
-body.dark-mode .sql-result {
-    background: var(--background);
-    color: var(--text);
-    border-color: var(--border);
-}
-
-
-/* ===============================
-   BUTTONS
-================================ */
-
-body.dark-mode button {
-    color: var(--text);
-}
-
-body.dark-mode .query-box button,
-body.dark-mode .security-save,
-body.dark-mode .analytics-button,
-body.dark-mode .primary-button {
-    background: var(--primary);
-    color: #111;
-}
-
-
-/* ===============================
-   SEARCH BOX
-================================ */
-
-body.dark-mode .search-box {
-    background: var(--surface-elevated);
-    border-color: var(--border);
-}
-
-body.dark-mode .search-box input {
-    background: transparent !important;
-}
-
-
-/* ===============================
-   EMPTY STATES
-================================ */
-
-body.dark-mode .query-empty,
-body.dark-mode .history-empty {
-    color: var(--text-light);
-}
-
-
-/* ===============================
+/* =========================================================
    LINKS
-================================ */
+========================================================= */
 
-body.dark-mode a {
-    color: var(--primary);
+a {
+    color: #5D94C2;
+
+    text-decoration: none;
 }
 
 
-/* ===============================
+/* =========================================================
+   GLOBAL BUTTON RESET
+========================================================= */
+
+button {
+    font-family: "Manrope", sans-serif;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+input,
+textarea,
+select {
+
+    background: #101923;
+
+    color: #E7EDF3;
+
+    border: 1px solid #263543;
+
+    outline: none;
+}
+
+
+input::placeholder,
+textarea::placeholder {
+
+    color: #657587;
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+
+    border-color: #3C607D;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+select option {
+
+    background: #101923;
+
+    color: #E7EDF3;
+}
+
+
+/* =========================================================
+   GENERIC CARDS
+========================================================= */
+
+.card,
+.analytics-card,
+.chart-card,
+.setting-card,
+.history-card,
+.result-card,
+.dataset-card,
+.query-box,
+.dataset-selector,
+.insight-panel {
+
+    background: #101923;
+
+    color: #E7EDF3;
+
+    border: 1px solid #263543;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   TABLES
+========================================================= */
+
+table {
+
+    background: #101923;
+
+    color: #E7EDF3;
+
+    border-color: #263543;
+}
+
+
+th {
+
+    background: #172330;
+
+    color: #E7EDF3;
+
+    border-color: #263543;
+}
+
+
+td {
+
+    color: #8F9EAE;
+
+    border-color: #263543;
+}
+
+
+tr:hover {
+
+    background: #131E29;
+}
+
+
+/* =========================================================
+   SQL RESULT
+========================================================= */
+
+.sql-result {
+
+    background: #080D14;
+
+    color: #E7EDF3;
+
+    border: 1px solid #263543;
+}
+
+
+/* =========================================================
+   QUERY / PRIMARY BUTTONS
+========================================================= */
+
+.query-box button,
+.security-save,
+.analytics-button,
+.primary-button {
+
+    background: #315F85;
+
+    color: #F2F6FA;
+
+    border: 1px solid #40739D;
+}
+
+
+.query-box button:hover,
+.security-save:hover,
+.analytics-button:hover,
+.primary-button:hover {
+
+    background: #3A709A;
+}
+
+
+/* =========================================================
+   SEARCH BOX
+========================================================= */
+
+.search-box {
+
+    background: #101923;
+
+    border: 1px solid #263543;
+}
+
+
+.search-box input {
+
+    background: transparent;
+
+    color: #E7EDF3;
+}
+
+
+/* =========================================================
+   EMPTY STATES
+========================================================= */
+
+.query-empty,
+.history-empty {
+
+    color: #8F9EAE;
+}
+
+
+/* =========================================================
+   SIDEBAR GLOBAL
+========================================================= */
+
+.sidebar {
+
+    background: #0B121A;
+
+    color: #E7EDF3;
+
+    border-right: 1px solid #263543;
+}
+
+
+/* =========================================================
+   NAVBAR GLOBAL
+========================================================= */
+
+.navbar {
+
+    background: rgba(13, 20, 28, 0.88);
+
+    color: #E7EDF3;
+
+    border-color: #293540;
+}
+
+
+/* =========================================================
    SCROLLBAR
-================================ */
+========================================================= */
 
-body.dark-mode ::-webkit-scrollbar {
+::-webkit-scrollbar {
+
     width: 8px;
+
+    height: 8px;
 }
 
-body.dark-mode ::-webkit-scrollbar-track {
-    background: var(--background);
+
+::-webkit-scrollbar-track {
+
+    background: #080D14;
 }
 
-body.dark-mode ::-webkit-scrollbar-thumb {
-    background: var(--border);
+
+::-webkit-scrollbar-thumb {
+
+    background: #263543;
+
     border-radius: 10px;
 }
 
-body.dark-mode ::-webkit-scrollbar-thumb:hover {
-    background: var(--primary);
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #3C607D;
+}
+
+
+/* Firefox */
+
+* {
+
+    scrollbar-width: thin;
+
+    scrollbar-color: #263543 #080D14;
 }

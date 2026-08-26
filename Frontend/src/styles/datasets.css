@@ -1,389 +1,688 @@
-.datasets{
-    min-height:100vh;
-    background:var(--cream);
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* =====================================================
+   QUERYMIND AI — DATASETS
+   CLEAN COMPACT DARK BLUE THEME
+===================================================== */
+
+.datasets {
+    min-height: 100vh;
+    background: #0A0F16;
+    color: #E7ECF1;
+    font-family: "Manrope", sans-serif;
 }
 
-.datasets-content{
-
-    margin-left:230px;
-
-    padding:120px 35px 35px;
-
-    min-height:100vh;
-
-    background:linear-gradient(
-        135deg,
-        #fcfaf7,
-        #f6efe7
-    );
+.datasets *,
+.datasets *::before,
+.datasets *::after {
+    box-sizing: border-box;
 }
 
-/* ===========================
-        Header
-=========================== */
-
-.datasets-header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:30px;
-
+.datasets button,
+.datasets input,
+.datasets textarea,
+.datasets select {
+    font-family: "Manrope", sans-serif;
 }
 
-.datasets-header h1{
 
-    font-family:var(--font-heading);
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
 
-    font-size:30px;
+.datasets-content {
+    margin-left: 230px;
+    min-height: 100vh;
 
-    color:var(--coffee);
+    padding: 115px 40px 55px;
 
-    margin-bottom:6px;
+    background:
+        radial-gradient(
+            circle at 75% 0%,
+            rgba(75, 127, 168, 0.08),
+            transparent 35%
+        ),
+        #0A0F16;
 
+    color: #E7ECF1;
 }
 
-.datasets-header p{
 
-    color:#7A6E64;
+/* =====================================================
+   HEADER
+===================================================== */
 
-    font-size:16px;
+.datasets-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 
+    width: 100%;
+
+    margin-bottom: 30px;
+
+    gap: 30px;
 }
 
-/* ===========================
-      Upload Button
-=========================== */
 
-.upload-btn{
+/* =====================================================
+   HEADER TEXT
+===================================================== */
 
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    border:none;
-
-    background:#6D4C41;
-
-    color:white;
-
-    padding:14px 22px;
-
-    border-radius:16px;
-
-    cursor:pointer;
-
-    font-size:15px;
-
-    font-weight:500;
-
-    transition:.3s;
-
+.datasets-header-text {
+    min-width: 0;
+    flex: 1;
 }
 
-.upload-btn:hover{
 
-    background:#5B3F35;
+/* =====================================================
+   EYEBROW
+===================================================== */
 
-    transform:translateY(-2px);
+.datasets-eyebrow {
+    display: block;
 
+    margin-bottom: 11px;
+
+    color: #6E9BC0;
+
+    font-size: 9px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
 }
 
-/* ===========================
-        Search
-=========================== */
 
-.search-box{
+/* =====================================================
+   HEADER TITLE
+===================================================== */
 
-    display:flex;
+.datasets-header h1 {
+    margin: 0 0 10px;
 
-    align-items:center;
+    max-width: 650px;
 
-    gap:12px;
+    color: #E7ECF1;
 
-    background:white;
+    font-size: 42px;
+    line-height: 1.12;
 
-    padding:14px 18px;
+    font-weight: 700;
 
-    border-radius:16px;
+    letter-spacing: -1.8px;
+}
+
+.datasets-header h1 i {
+    color: #6E9BC0;
+
+    font-style: italic;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   HEADER DESCRIPTION
+===================================================== */
+
+.datasets-header p {
+    margin: 0;
+
+    max-width: 500px;
+
+    color: #AEB9C3;
+
+    font-size: 13px;
+    line-height: 1.65;
+
+    font-weight: 400;
+}
+
+
+/* =====================================================
+   UPLOAD BUTTON
+===================================================== */
+
+.upload-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+
+    padding: 11px 16px;
+
+    border: 1px solid #40739D;
+    border-radius: 9px;
+
+    background: #315F85;
+
+    color: #F2F6FA;
+
+    font-size: 11px;
+    line-height: 1.2;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.upload-btn:hover {
+    background: #3A709A;
+
+    border-color: #4B82AB;
+
+    transform: translateY(-1px);
 
     box-shadow:
-        0 8px 25px rgba(0,0,0,.05);
-
-    margin-bottom:28px;
-
+        0 8px 20px rgba(49, 95, 133, .22);
 }
 
-.search-box input{
 
-    border:none;
+/* =====================================================
+   SEARCH
+===================================================== */
 
-    outline:none;
+.search-box {
+    display: flex;
+    align-items: center;
 
-    width:100%;
+    width: 100%;
 
-    font-size:15px;
+    gap: 11px;
 
-    background:transparent;
+    margin-bottom: 25px;
+    padding: 13px 16px;
 
+    background: #111821;
+
+    border: 1px solid #293540;
+    border-radius: 10px;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
 }
 
-/* ===========================
-      Dataset Cards
-=========================== */
+.search-box:focus-within {
+    background: #131C26;
 
-.dataset-list{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:20px;
-
-}
-
-.dataset-card{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    background:rgba(255,255,255,.78);
-
-    backdrop-filter:blur(16px);
-
-    padding:24px;
-
-    border-radius:22px;
+    border-color: #41617A;
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,.05);
-
-    transition:.3s;
-
+        0 0 0 3px rgba(75, 127, 168, .06);
 }
 
-.dataset-card:hover{
+.search-box svg {
+    width: 17px;
+    height: 17px;
 
-    transform:translateY(-5px);
+    flex-shrink: 0;
+
+    color: #6E8396;
+}
+
+.search-box input {
+    width: 100%;
+    min-width: 0;
+
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #E7ECF1;
+
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.search-box input::placeholder {
+    color: #737F8B;
+}
+
+
+/* =====================================================
+   DATASET LIST
+===================================================== */
+
+.dataset-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   DATASET CARD
+===================================================== */
+
+.dataset-card {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 17px 20px;
+
+    background: #111821;
+
+    border: 1px solid #293540;
+    border-radius: 12px;
 
     box-shadow:
-        0 18px 40px rgba(0,0,0,.08);
+        0 10px 25px rgba(0, 0, 0, .14);
 
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
 }
 
-/* ===========================
-      Dataset Info
-=========================== */
+.dataset-card:hover {
+    background: #171F29;
 
-.dataset-info{
+    border-color: #344657;
 
-    display:flex;
+    transform: translateY(-2px);
 
-    align-items:center;
-
-    gap:18px;
-
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, .20);
 }
 
-.file-icon{
 
-    width:42px;
+/* =====================================================
+   DATASET INFO
+===================================================== */
 
-    height:42px;
+.dataset-info {
+    display: flex;
+    align-items: center;
 
-    color:var(--coffee);
+    gap: 14px;
 
+    min-width: 0;
+
+    flex: 1;
 }
 
-.dataset-info h3{
 
-    margin:0;
+/* =====================================================
+   FILE ICON
+===================================================== */
 
-    font-size:22px;
+.file-icon {
+    width: 36px;
+    height: 36px;
 
-    font-family:var(--font-heading);
+    flex-shrink: 0;
 
-    color:var(--coffee);
+    padding: 8px;
 
+    color: #6E9BC0;
+
+    background: rgba(75, 127, 168, .08);
+
+    border: 1px solid rgba(75, 127, 168, .18);
+
+    border-radius: 8px;
 }
 
-.dataset-info p{
 
-    margin-top:6px;
+/* =====================================================
+   DATASET TEXT
+===================================================== */
 
-    color:#8A7D72;
-
-    font-size:14px;
-
+.dataset-info > div {
+    min-width: 0;
 }
 
-/* ===========================
-      Buttons
-=========================== */
 
-.dataset-actions{
+/* =====================================================
+   DATASET NAME
+===================================================== */
 
-    display:flex;
+.dataset-info h3 {
+    margin: 0;
 
-    gap:12px;
+    color: #E7ECF1;
 
+    font-size: 13px;
+    line-height: 1.35;
+
+    font-weight: 700;
+
+    letter-spacing: -.1px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-.dataset-actions button{
 
-    display:flex;
+/* =====================================================
+   DATASET META
+===================================================== */
 
-    align-items:center;
+.dataset-info p {
+    margin: 4px 0 0;
 
-    gap:8px;
+    color: #737F8B;
 
-    border:none;
+    font-size: 10px;
+    line-height: 1.45;
 
-    background:#EFE7DE;
+    font-weight: 500;
 
-    color:var(--coffee);
-
-    padding:10px 16px;
-
-    border-radius:12px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-    font-size:14px;
-
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-.dataset-actions button:hover{
 
-    background:white;
+/* =====================================================
+   ACTION BUTTONS
+===================================================== */
 
+.dataset-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    flex-shrink: 0;
+
+    margin-left: 20px;
 }
 
-.dataset-actions .delete{
+.dataset-actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    background:#F8EAEA;
+    gap: 6px;
 
-    color:#B53E3E;
+    padding: 8px 11px;
 
+    border: 1px solid #344657;
+    border-radius: 8px;
+
+    background: #171F29;
+
+    color: #AEB9C3;
+
+    font-size: 10px;
+    line-height: 1.2;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        transform .2s ease;
 }
 
-.dataset-actions .delete:hover{
+.dataset-actions button:hover {
+    background: #202C38;
 
-    background:#F3DADA;
+    border-color: #41617A;
 
+    color: #E7ECF1;
+
+    transform: translateY(-1px);
 }
+
+
+/* =====================================================
+   DELETE
+===================================================== */
+
+.dataset-actions .delete {
+    background: rgba(80, 43, 49, .35);
+
+    border-color: #514047;
+
+    color: #C99198;
+}
+
+.dataset-actions .delete:hover {
+    background: #493039;
+
+    border-color: #67434B;
+
+    color: #F0B9BE;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.dataset-empty {
+    width: 100%;
+
+    padding: 55px 25px;
+
+    text-align: center;
+
+    background: #111821;
+
+    border: 1px solid #293540;
+    border-radius: 12px;
+}
+
+.dataset-empty h3 {
+    margin: 0 0 7px;
+
+    color: #E7ECF1;
+
+    font-size: 15px;
+    line-height: 1.35;
+
+    font-weight: 700;
+}
+
+.dataset-empty p {
+    margin: 0;
+
+    color: #737F8B;
+
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+
+/* =====================================================
+   SUCCESS TOAST
+===================================================== */
 
 .success-toast {
-  position: fixed;
-  top: 84px;
-  right: 28px;
-  z-index: 9999;
-  padding: 13px 18px;
-  border-radius: 12px;
-  background: #4f6f52;
-  color: #fff;
-  font-weight: 600;
-  box-shadow: 0 10px 30px rgba(0,0,0,.16);
-  animation: toastIn .2s ease-out;
+    position: fixed;
+
+    top: 84px;
+    right: 28px;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 11px 16px;
+
+    background: #111821;
+
+    border: 1px solid #36566F;
+    border-radius: 10px;
+
+    color: #DCE8F1;
+
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, .30);
+
+    font-size: 11px;
+    line-height: 1.4;
+
+    font-weight: 600;
+
+    animation: toastIn .2s ease-out;
 }
 
 @keyframes toastIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
 
-@media (max-width: 700px) {
-  .success-toast { left: 16px; right: 16px; top: 72px; text-align: center; }
-}
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
 
-
-/* ===========================
-   Success Toast
-=========================== */
-.success-toast{
-    position:fixed;
-    top:24px;
-    left:50%;
-    transform:translateX(-50%);
-    z-index:3000;
-    display:flex;
-    align-items:center;
-    gap:9px;
-    min-width:260px;
-    max-width:min(520px, calc(100vw - 32px));
-    padding:13px 20px;
-    border:1px solid #D8C4B2;
-    border-radius:999px;
-    background:rgba(255,250,244,.96);
-    color:#5A4030;
-    box-shadow:0 14px 35px rgba(74,53,39,.16);
-    backdrop-filter:blur(14px);
-    font-size:14px;
-    font-weight:600;
-    text-align:center;
-    animation:toastIn .25s ease-out;
-}
-
-.success-toast::first-letter{
-    color:#7B5B45;
-}
-
-@keyframes toastIn{
-    from{opacity:0; transform:translate(-50%, -10px);}
-    to{opacity:1; transform:translate(-50%, 0);}
-}
-
-/* =========================================
-   DATASETS — BLUE DARK MODE BUTTONS
-========================================= */
-
-/* Upload Dataset */
-
-body.dark-mode .upload-btn {
-    background: #315F85 !important;
-    color: #F2F6FA !important;
-    border: 1px solid #40739D !important;
-}
-
-body.dark-mode .upload-btn:hover {
-    background: #3A709A !important;
-    transform: translateY(-2px);
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
-/* Preview */
+/* =====================================================
+   TABLET
+===================================================== */
 
-body.dark-mode .dataset-actions button {
-    background: #263849 !important;
-    color: #BFD3E4 !important;
-    border: 1px solid #38536A !important;
+@media (max-width: 900px) {
+
+    .datasets-content {
+        margin-left: 0;
+
+        padding: 95px 25px 45px;
+    }
+
+    .datasets-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        margin-bottom: 28px;
+    }
+
+    .upload-btn {
+        width: fit-content;
+    }
 }
 
-body.dark-mode .dataset-actions button:hover {
-    background: #30495D !important;
-    color: #E5EEF5 !important;
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .datasets-content {
+        padding: 85px 20px 40px;
+    }
+
+    .datasets-header {
+        gap: 18px;
+    }
+
+    .datasets-eyebrow {
+        margin-bottom: 9px;
+
+        font-size: 8px;
+    }
+
+    .datasets-header h1 {
+        font-size: 34px;
+
+        line-height: 1.12;
+
+        letter-spacing: -1.5px;
+    }
+
+    .datasets-header p {
+        font-size: 12px;
+
+        line-height: 1.6;
+    }
+
+    .upload-btn {
+        width: 100%;
+    }
+
+    .dataset-card {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 16px;
+    }
+
+    .dataset-info {
+        width: 100%;
+    }
+
+    .dataset-actions {
+        width: 100%;
+
+        margin-left: 0;
+    }
+
+    .dataset-actions button {
+        flex: 1;
+    }
+
+    .success-toast {
+        left: 16px;
+        right: 16px;
+
+        top: 72px;
+
+        justify-content: center;
+
+        text-align: center;
+    }
 }
 
 
-/* Delete */
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
 
-body.dark-mode .dataset-actions .delete {
-    background: #302A32 !important;
-    color: #D9A5AA !important;
-    border: 1px solid #514047 !important;
-}
+@media (max-width: 400px) {
 
-body.dark-mode .dataset-actions .delete:hover {
-    background: #493039 !important;
-    color: #F0B9BE !important;
+    .dataset-actions {
+        flex-direction: column;
+    }
+
+    .dataset-actions button {
+        width: 100%;
+    }
 }

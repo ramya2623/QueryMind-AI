@@ -1,110 +1,269 @@
+/* =====================================================
+   QUERYMIND AI — DATASET PREVIEW
+   CONSISTENT DARK BLUE BRAND SYSTEM
+===================================================== */
+
 .dataset-preview-page {
     min-height: 100vh;
-    background: #f8f6f2;
+    background: #0A0F16;
+    color: #E7ECF1;
+    font-family: "Manrope", sans-serif;
 }
+
+.dataset-preview-page *,
+.dataset-preview-page *::before,
+.dataset-preview-page *::after {
+    box-sizing: border-box;
+}
+
+.dataset-preview-page button,
+.dataset-preview-page input,
+.dataset-preview-page textarea,
+.dataset-preview-page select {
+    font-family: "Manrope", sans-serif;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
 
 .dataset-preview-content {
-    margin-left: 250px;
-    padding: 110px 40px 40px;
+    margin-left: 230px;
+    min-height: 100vh;
+
+    padding: 120px 40px 60px;
+
+    background:
+        radial-gradient(
+            circle at 75% 0%,
+            rgba(75, 127, 168, 0.08),
+            transparent 35%
+        ),
+        #0A0F16;
 }
 
-/* Back button */
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
 
 .back-btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
+
+    margin-bottom: 30px;
+    padding: 0;
 
     border: none;
     background: transparent;
 
-    color: #555;
+    color: #8995A1;
+
+    font-size: 12px;
+    font-weight: 600;
+
     cursor: pointer;
 
-    font-size: 14px;
-    margin-bottom: 25px;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .back-btn:hover {
-    color: #222;
+    color: #6E9BC0;
+    transform: translateX(-2px);
+}
+
+.back-btn svg {
+    width: 16px;
+    height: 16px;
 }
 
 
-/* Header */
+/* =====================================================
+   HEADER
+===================================================== */
+
+.preview-header {
+    margin-bottom: 38px;
+}
+
+
+/* EYEBROW */
+
+.preview-header::before {
+    content: "DATASET PREVIEW";
+
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #6E9BC0;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
 
 .preview-title {
     display: flex;
     align-items: center;
     gap: 12px;
+
+    margin-bottom: 10px;
+}
+
+.preview-title svg {
+    width: 25px;
+    height: 25px;
+
+    flex-shrink: 0;
+
+    color: #6E9BC0;
+
+    stroke-width: 1.8;
 }
 
 .preview-title h1 {
     margin: 0;
-    font-size: 30px;
-    color: #222;
+
+    color: #E7ECF1;
+
+    font-size: clamp(36px, 4vw, 52px);
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: -2.5px;
 }
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
 
 .preview-header p {
-    margin-top: 8px;
-    color: #777;
+    margin: 0;
+
+    max-width: 650px;
+
+    color: #AEB9C3;
+
+    font-size: 13px;
+    line-height: 1.75;
 }
 
 
-/* Table card */
+/* =====================================================
+   TABLE CARD
+===================================================== */
 
 .table-container {
-    margin-top: 30px;
-
     width: 100%;
+
+    margin-top: 30px;
 
     overflow-x: auto;
 
-    background: #ffffff;
+    background: #111821;
 
+    border: 1px solid #293540;
     border-radius: 14px;
 
-    border: 1px solid #e9e5df;
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.18);
 
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.table-container:hover {
+    border-color: #344657;
+
+    box-shadow:
+        0 16px 35px rgba(0, 0, 0, 0.25);
 }
 
 
-/* Table */
+/* =====================================================
+   TABLE
+===================================================== */
 
 .preview-table {
     width: 100%;
+    min-width: 650px;
+
     border-collapse: collapse;
+
+    background: #0D141C;
 }
+
+
+/* =====================================================
+   TABLE HEADER + CELLS
+===================================================== */
 
 .preview-table th,
 .preview-table td {
-    padding: 15px 18px;
+    padding: 14px 17px;
 
     text-align: left;
 
-    border-bottom: 1px solid #eee8e0;
+    border-bottom: 1px solid #293540;
 
     white-space: nowrap;
 }
 
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
 .preview-table th {
-    background: #faf8f5;
+    background: #111821;
 
-    color: #444;
+    color: #AEB9C3;
 
+    font-size: 10px;
     font-weight: 600;
 
-    font-size: 14px;
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
 }
 
-.preview-table td {
-    color: #555;
 
-    font-size: 14px;
+/* =====================================================
+   TABLE DATA
+===================================================== */
+
+.preview-table td {
+    color: #AEB9C3;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   ROW HOVER
+===================================================== */
+
+.preview-table tbody tr {
+    transition: background 0.2s ease;
 }
 
 .preview-table tbody tr:hover {
-    background: #fcfaf7;
+    background: #171F29;
 }
 
 .preview-table tr:last-child td {
@@ -112,113 +271,199 @@
 }
 
 
-/* Loading / Error */
+/* =====================================================
+   FIRST COLUMN
+===================================================== */
 
-.loading,
-.error {
-    margin-top: 30px;
-    color: #777;
+.preview-table tbody td:first-child {
+    color: #DDE5EB;
+    font-weight: 600;
 }
 
 
-/* Empty state */
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 180px;
+
+    margin-top: 30px;
+
+    background: #111821;
+
+    border: 1px solid #293540;
+    border-radius: 14px;
+
+    color: #8995A1;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.error {
+    margin-top: 30px;
+    padding: 14px 17px;
+
+    background: #24191B;
+
+    border: 1px solid #514047;
+    border-radius: 11px;
+
+    color: #D9A5AA;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
 
 .empty-preview {
-    margin-top: 40px;
-
-    padding: 60px;
+    margin-top: 30px;
+    padding: 60px 30px;
 
     text-align: center;
 
-    background: #ffffff;
+    background: #111821;
 
-    border: 1px solid #e9e5df;
-
+    border: 1px solid #293540;
     border-radius: 14px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.18);
 }
 
-/* =========================================
-   DATASET PREVIEW — DARK BLUE THEME
-========================================= */
+.empty-preview h3 {
+    margin: 0 0 8px;
 
-body.dark-mode .dataset-preview-page {
+    color: #E1E9EF;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.empty-preview p {
+    margin: 0;
+
+    color: #737F8B;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+.dataset-preview-page::-webkit-scrollbar,
+.table-container::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.dataset-preview-page::-webkit-scrollbar-track,
+.table-container::-webkit-scrollbar-track {
     background: #0A0F16;
-    color: #DDE3E8;
 }
 
-body.dark-mode .dataset-preview-content {
-    background: #0A0F16;
-    color: #DDE3E8;
+.dataset-preview-page::-webkit-scrollbar-thumb,
+.table-container::-webkit-scrollbar-thumb {
+    background: #293540;
+    border-radius: 10px;
 }
 
-
-/* Back button */
-
-body.dark-mode .back-btn {
-    color: #8F9BA8;
-}
-
-body.dark-mode .back-btn:hover {
-    color: #DDE3E8;
+.dataset-preview-page::-webkit-scrollbar-thumb:hover,
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #344657;
 }
 
 
-/* Header */
+/* =====================================================
+   RESPONSIVE — TABLET
+===================================================== */
 
-body.dark-mode .preview-title h1 {
-    color: #DDE3E8;
-}
+@media (max-width: 800px) {
 
-body.dark-mode .preview-header p {
-    color: #8995A1;
-}
+    .dataset-preview-content {
+        margin-left: 0;
 
+        padding: 100px 25px 45px;
+    }
 
-/* Table card */
-
-body.dark-mode .table-container {
-    background: #111821;
-    border: 1px solid #293540;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
-}
-
-
-/* Table */
-
-body.dark-mode .preview-table th,
-body.dark-mode .preview-table td {
-    border-bottom-color: #293540;
-}
-
-body.dark-mode .preview-table th {
-    background: #171F29;
-    color: #D5DCE2;
-}
-
-body.dark-mode .preview-table td {
-    color: #AEB9C3;
-}
-
-body.dark-mode .preview-table tbody tr:hover {
-    background: #171F29;
+    .preview-title h1 {
+        font-size: 42px;
+        letter-spacing: -2px;
+    }
 }
 
 
-/* Loading / Error */
+/* =====================================================
+   RESPONSIVE — MOBILE
+===================================================== */
 
-body.dark-mode .loading {
-    color: #8995A1;
-}
+@media (max-width: 600px) {
 
-body.dark-mode .error {
-    color: #D97878;
-}
+    .dataset-preview-content {
+        padding: 90px 18px 40px;
+    }
 
+    .preview-header {
+        margin-bottom: 30px;
+    }
 
-/* Empty state */
+    .preview-title {
+        gap: 9px;
+    }
 
-body.dark-mode .empty-preview {
-    background: #111821;
-    border: 1px solid #293540;
-    color: #AEB9C3;
+    .preview-title svg {
+        width: 21px;
+        height: 21px;
+    }
+
+    .preview-title h1 {
+        font-size: 36px;
+        letter-spacing: -1.8px;
+    }
+
+    .preview-header p {
+        font-size: 12px;
+    }
+
+    .table-container {
+        margin-top: 25px;
+        border-radius: 12px;
+    }
+
+    .preview-table {
+        min-width: 600px;
+    }
+
+    .preview-table th,
+    .preview-table td {
+        padding: 12px 14px;
+    }
+
+    .preview-table th {
+        font-size: 9px;
+    }
+
+    .preview-table td {
+        font-size: 11px;
+    }
+
+    .empty-preview {
+        padding: 50px 20px;
+    }
 }

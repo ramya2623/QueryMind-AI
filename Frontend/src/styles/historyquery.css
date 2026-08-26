@@ -1,262 +1,514 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* =====================================================
+   QUERYMIND AI — HISTORY QUERY
+   DASHBOARD DARK BLUE THEME
+===================================================== */
+
 .history-query-page {
-  min-height: 100vh;
+    min-height: 100vh;
+    background: #0A0F16;
+    color: #E7ECF1;
+    font-family: "Manrope", sans-serif;
 }
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
 
 .history-query-content {
-  margin-left: 250px;
-  padding: 100px 40px 40px;
-  max-width: 1100px;
+    margin-left: 230px;
+    max-width: 1100px;
+    min-height: 100vh;
+    padding: 120px 40px 60px;
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            circle at 75% 0%,
+            rgba(75, 127, 168, 0.08),
+            transparent 35%
+        ),
+        #0A0F16;
+
+    color: #E7ECF1;
 }
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
 
 .back-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  font-size: 14px;
-  margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 30px;
+
+    border: none;
+    background: transparent;
+
+    color: #8995A1;
+
+    cursor: pointer;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
+.back-button:hover {
+    color: #E7ECF1;
+    transform: translateX(-2px);
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
 .history-query-header {
-  margin-bottom: 25px;
+    margin-bottom: 32px;
 }
 
 .history-query-header h1 {
-  margin-bottom: 8px;
+    margin: 0 0 12px;
+
+    color: #E7ECF1;
+
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(42px, 4vw, 58px);
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -3px;
 }
 
 .history-query-header p {
-  margin: 0;
-  opacity: 0.7;
+    margin: 0;
+
+    max-width: 650px;
+
+    color: #AEB9C3;
+
+    font-size: 14px;
+    line-height: 1.8;
 }
+
+
+/* =====================================================
+   DATASET INFORMATION
+===================================================== */
 
 .history-query-dataset {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 18px 20px;
-  margin-bottom: 20px;
-  border-radius: 12px;
-  background: #f5eee5;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 18px 20px;
+    margin-bottom: 20px;
+
+    background: #171F29;
+
+    border: 1px solid #293540;
+    border-radius: 12px;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease;
 }
+
+.history-query-dataset:hover {
+    background: #1B2631;
+    border-color: #344657;
+}
+
+
+/* Dataset icon */
+
+.history-query-dataset svg {
+    width: 20px;
+    height: 20px;
+
+    flex-shrink: 0;
+
+    color: #6E9BC0;
+
+    stroke-width: 1.8;
+}
+
+
+/* Dataset label */
 
 .history-query-dataset span {
-  font-size: 13px;
-  opacity: 0.65;
+    display: block;
+
+    color: #8995A1;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
 }
 
+
+/* Dataset name */
+
 .history-query-dataset h3 {
-  margin: 4px 0 0;
+    margin: 4px 0 0;
+
+    color: #D5DCE2;
+
+    font-size: 14px;
+    font-weight: 600;
 }
+
+
+/* =====================================================
+   MAIN CARDS
+===================================================== */
 
 .history-query-card,
 .history-insight-card {
-  background: white;
-  border-radius: 14px;
-  padding: 22px;
-  margin-bottom: 20px;
-  border: 1px solid #e8dfd5;
+    margin-bottom: 20px;
+    padding: 24px;
+
+    background: #111821;
+
+    border: 1px solid #293540;
+    border-radius: 14px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
+.history-query-card:hover,
+.history-insight-card:hover {
+    transform: translateY(-2px);
+
+    background: #171F29;
+
+    border-color: #344657;
+
+    box-shadow:
+        0 16px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =====================================================
+   CARD TITLE
+===================================================== */
+
 .card-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+.card-title svg {
+    width: 18px;
+    height: 18px;
+
+    flex-shrink: 0;
+
+    color: #6E9BC0;
+
+    stroke-width: 1.8;
 }
 
 .card-title h3 {
-  margin: 0;
+    margin: 0;
+
+    color: #E7ECF1;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    letter-spacing: -0.3px;
 }
+
+
+/* =====================================================
+   QUESTION
+===================================================== */
 
 .question-text {
-  font-size: 16px;
-  margin: 0;
+    margin: 0;
+
+    color: #AEB9C3;
+
+    font-size: 15px;
+    line-height: 1.8;
 }
+
+
+/* =====================================================
+   SQL RESULT
+===================================================== */
 
 .sql-result {
-  margin: 0;
-  padding: 18px;
-  border-radius: 10px;
-  background: #f7f3ee;
-  overflow-x: auto;
-  white-space: pre-wrap;
+    margin: 0;
+    padding: 18px;
+
+    overflow-x: auto;
+
+    background: #0B1118;
+
+    border: 1px solid #293540;
+    border-radius: 10px;
+
+    color: #AFC4D5;
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    font-size: 12px;
+    line-height: 1.7;
+
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
+
+/* =====================================================
+   RESULTS TABLE
+===================================================== */
+
 .results-table-wrapper {
-  overflow-x: auto;
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid #293540;
+    border-radius: 10px;
 }
 
 .results-table-wrapper table {
-  width: 100%;
-  border-collapse: collapse;
+    width: 100%;
+    min-width: 500px;
+
+    border-collapse: collapse;
+
+    background: #0D141C;
 }
 
 .results-table-wrapper th,
 .results-table-wrapper td {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #eee;
+    padding: 13px 15px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #293540;
 }
+
+
+/* Table header */
 
 .results-table-wrapper th {
-  font-weight: 600;
+    background: #171F29;
+
+    color: #D5DCE2;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    white-space: nowrap;
 }
+
+
+/* Table cells */
+
+.results-table-wrapper td {
+    color: #AEB9C3;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+}
+
+
+/* Row hover */
+
+.results-table-wrapper tbody tr:hover {
+    background: #171F29;
+}
+
+
+/* Last row */
+
+.results-table-wrapper tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =====================================================
+   NO RESULTS
+===================================================== */
 
 .no-results {
-  opacity: 0.65;
+    margin: 0;
+
+    color: #8995A1;
+
+    font-size: 12px;
 }
 
+
+/* =====================================================
+   AI INSIGHT
+===================================================== */
+
 .history-insight-card {
-  background: #f5eee5;
+    background: #111821;
 }
 
 .history-insight-card p {
-  line-height: 1.6;
-  margin: 0;
+    margin: 0;
+
+    color: #AEB9C3;
+
+    font-size: 13px;
+    line-height: 1.8;
 }
+
+
+/* Highlighted AI text */
+
+.history-insight-card strong,
+.history-insight-card b {
+    color: #6E9BC0;
+}
+
+
+/* =====================================================
+   QUERY ERROR
+===================================================== */
 
 .query-error {
-  padding: 15px;
-  border-radius: 10px;
-  background: #f8e5e1;
-  margin-top: 20px;
+    margin-top: 20px;
+    padding: 14px 16px;
+
+    background: #24191B;
+
+    border: 1px solid #5A3B3B;
+    border-radius: 10px;
+
+    color: #D88A8A;
+
+    font-size: 12px;
+    line-height: 1.6;
 }
 
-/* =========================================
-   HISTORY QUERY — DARK BLUE THEME
-========================================= */
 
-body.dark-mode .history-query-page {
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+.history-query-page ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.history-query-page ::-webkit-scrollbar-track {
     background: #0A0F16;
-    color: #DDE3E8;
 }
 
-body.dark-mode .history-query-content {
-    color: #DDE3E8;
+.history-query-page ::-webkit-scrollbar-thumb {
+    background: #293540;
+    border-radius: 10px;
 }
 
-
-/* Back button */
-
-body.dark-mode .back-button {
-    color: #8F9BA8;
-}
-
-body.dark-mode .back-button:hover {
-    color: #DDE3E8;
+.history-query-page ::-webkit-scrollbar-thumb:hover {
+    background: #344657;
 }
 
 
-/* Header */
+/* =====================================================
+   RESPONSIVE — TABLET
+===================================================== */
 
-body.dark-mode .history-query-header h1 {
-    color: #DDE3E8;
-}
+@media (max-width: 900px) {
 
-body.dark-mode .history-query-header p {
-    color: #8995A1;
-}
+    .history-query-content {
+        margin-left: 0;
 
+        max-width: none;
 
-/* Dataset information */
-
-body.dark-mode .history-query-dataset {
-    background: #171F29;
-    border: 1px solid #293540;
-}
-
-body.dark-mode .history-query-dataset span {
-    color: #8995A1;
-}
-
-body.dark-mode .history-query-dataset h3 {
-    color: #D5DCE2;
+        padding:
+            100px 25px 50px;
+    }
 }
 
 
-/* Main cards */
+/* =====================================================
+   RESPONSIVE — MOBILE
+===================================================== */
 
-body.dark-mode .history-query-card,
-body.dark-mode .history-insight-card {
-    background: #111821;
-    border: 1px solid #293540;
-    color: #DDE3E8;
-}
+@media (max-width: 600px) {
 
+    .history-query-content {
+        padding:
+            90px 18px 40px;
+    }
 
-/* Card titles */
+    .history-query-header {
+        margin-bottom: 28px;
+    }
 
-body.dark-mode .card-title h3 {
-    color: #D5DCE2;
-}
+    .history-query-header h1 {
+        font-size: 40px;
+        letter-spacing: -2px;
+    }
 
-body.dark-mode .card-title svg {
-    color: #4B7FA8;
-}
+    .history-query-header p {
+        font-size: 13px;
+    }
 
+    .history-query-dataset {
+        padding: 16px;
+    }
 
-/* Question */
+    .history-query-card,
+    .history-insight-card {
+        padding: 20px;
+        border-radius: 12px;
+    }
 
-body.dark-mode .question-text {
-    color: #AEB9C3;
-}
+    .card-title h3 {
+        font-size: 16px;
+    }
 
+    .question-text {
+        font-size: 14px;
+    }
 
-/* SQL */
+    .sql-result {
+        padding: 15px;
+        font-size: 11px;
+    }
 
-body.dark-mode .sql-result {
-    background: #0B1118;
-    color: #AFC4D5;
-    border: 1px solid #293540;
-}
-
-
-/* Results table */
-
-body.dark-mode .results-table-wrapper th,
-body.dark-mode .results-table-wrapper td {
-    border-bottom-color: #293540;
-}
-
-body.dark-mode .results-table-wrapper th {
-    background: #171F29;
-    color: #D5DCE2;
-}
-
-body.dark-mode .results-table-wrapper td {
-    color: #AEB9C3;
-}
-
-body.dark-mode .results-table-wrapper tr:hover {
-    background: #171F29;
-}
-
-
-/* No results */
-
-body.dark-mode .no-results {
-    color: #8995A1;
-}
-
-
-/* AI Insight */
-
-body.dark-mode .history-insight-card {
-    background: #111821;
-}
-
-body.dark-mode .history-insight-card p {
-    color: #AEB9C3;
-}
-
-
-/* Query error */
-
-body.dark-mode .query-error {
-    background: #321F22;
-    border: 1px solid #4A2B30;
-    color: #D97878;
+    .results-table-wrapper th,
+    .results-table-wrapper td {
+        padding: 11px 12px;
+    }
 }

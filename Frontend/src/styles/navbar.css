@@ -1,192 +1,429 @@
-.navbar{
+/* =========================================================
+   QUERYMIND AI — NAVBAR
+   Premium Dark SaaS Theme
+========================================================= */
 
-    position:fixed;
+.navbar {
 
-    top:20px;
-    left:250px;
-    right:30px;
+    position: fixed;
 
-    height:64px;
+    top: 20px;
+    left: 250px;
+    right: 30px;
 
-    background:rgba(255,255,255,.72);
+    height: 64px;
 
-    backdrop-filter:blur(18px);
+    background: rgba(13, 20, 28, 0.88);
 
-    border-radius:24px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
+    border: 1px solid #293540;
 
-    padding:0 30px;
+    border-radius: 22px;
 
-    box-shadow:
-    0 12px 40px rgba(0,0,0,.06);
+    display: flex;
 
-    z-index:1000;
-}
+    align-items: center;
 
-.navbar-left{
-    display:flex;
-    align-items:center;
-}
+    justify-content: flex-end;
 
-.navbar-left h2{
-    font-family:"Manrope", serif;
-    font-size:32px;
-    font-weight:600;
-    color:#4A3527;
-    margin:0;
-}
-
-.navbar-right{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:22px;
-}
-
-.notification-btn{
-
-    width:46px;
-
-    height:46px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:white;
-
-    cursor:pointer;
-
-    font-size:20px;
-
-    transition:.3s;
+    padding: 0 24px;
 
     box-shadow:
-    0 5px 20px rgba(0,0,0,.05);
+        0 12px 40px rgba(0, 0, 0, 0.28);
+
+    z-index: 1000;
 }
 
-.notification-btn:hover{
 
-    transform:translateY(-2px);
+/* =========================================================
+   LEFT — BRAND
+========================================================= */
+
+.navbar-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
 }
 
-.profile{
 
-    display:flex;
+.navbar-left h2 {
 
-    align-items:center;
+    margin: 0;
 
-    gap:10px;
+    font-family: "Sora", sans-serif;
 
-    cursor:pointer;
+    font-size: 20px;
+
+    font-weight: 600;
+
+    letter-spacing: -0.4px;
+
+    color: #E8EEF3;
 }
 
-.profile-image{
 
-    width:40px;
+/* =========================================================
+   BRAIN / LOGO ICON
+========================================================= */
 
-    height:40px;
+.navbar-left svg {
 
-    border-radius:50%;
+    width: 22px;
 
-    background:#6D4C41;
+    height: 22px;
 
-    color:white;
+    flex-shrink: 0;
 
-    display:flex;
+    color: #6E9BC0;
 
-    align-items:center;
+    stroke: #6E9BC0;
 
-    justify-content:center;
-
-    font-size:15px;
-
-    font-weight:600;
-
+    stroke-width: 1.8;
 }
 
-.profile-info{
 
-    display:flex;
+/* =========================================================
+   AI BRAND ACCENT
+========================================================= */
 
-    flex-direction:column;
+.navbar-left h2 .ai,
+.navbar-left h2 span.ai {
+
+    color: #6E9BC0;
+
+    font-weight: 600;
 }
 
-.profile-name{
-    color:var(--coffee);
-    font-weight:600;
-    font-size:15px;
+
+/* If AI is written using <b> instead of <span> */
+
+.navbar-left h2 b {
+
+    color: #6E9BC0;
+
+    font-weight: 600;
 }
 
-.profile-plan{
-    font-size:12px;
-    color:#8E8076;
+
+/* =========================================================
+   RIGHT
+========================================================= */
+
+.navbar-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
 }
 
-/* =========================================
-   QUERYMIND AI — NAVBAR DARK BLUE THEME
-========================================= */
+
+/* =========================================================
+   NOTIFICATION
+========================================================= */
+
+.notification-btn {
+
+    width: 44px;
+
+    height: 44px;
+
+    border: 1px solid #293540;
+
+    border-radius: 50%;
+
+    background: #111821;
+
+    color: #AAB6C1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.notification-btn:hover {
+
+    background: #18222D;
+
+    border-color: #3C5265;
+
+    color: #E8EEF3;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    cursor: pointer;
+
+    padding: 4px 6px 4px 4px;
+
+    border-radius: 14px;
+
+    transition:
+        background 0.25s ease;
+}
+
+
+.profile:hover {
+
+    background: rgba(255, 255, 255, 0.04);
+}
+
+
+/* =========================================================
+   AVATAR
+========================================================= */
+
+.profile-image {
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #3F6F96;
+
+    color: #FFFFFF;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: "Sora", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   PROFILE TEXT
+========================================================= */
+
+.profile-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+
+.profile-name {
+
+    color: #E4EBF0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.profile-plan {
+
+    color: #7F8C98;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
 
 body.dark-mode .navbar {
-    background: rgba(17, 24, 33, 0.92) !important;
+
+    background: rgba(13, 20, 28, 0.88) !important;
 
     border: 1px solid #293540;
 
     box-shadow:
-        0 12px 40px rgba(0, 0, 0, 0.35);
-
-    backdrop-filter: blur(18px);
+        0 12px 40px rgba(0, 0, 0, 0.28);
 }
 
-
-/* Navbar title */
 
 body.dark-mode .navbar-left h2 {
-    color: #DDE3E8;
+
+    color: #E8EEF3;
 }
 
 
-/* Notification */
+/* Brain stays blue */
+
+body.dark-mode .navbar-left svg {
+
+    color: #6E9BC0;
+
+    stroke: #6E9BC0;
+}
+
+
+/* AI stays blue */
+
+body.dark-mode .navbar-left h2 .ai,
+body.dark-mode .navbar-left h2 span.ai,
+body.dark-mode .navbar-left h2 b {
+
+    color: #6E9BC0;
+}
+
 
 body.dark-mode .notification-btn {
-    background: #171F29;
 
-    color: #AEB9C3;
+    background: #111821;
 
     border: 1px solid #293540;
 
-    box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.25);
+    color: #AAB6C1;
 }
+
 
 body.dark-mode .notification-btn:hover {
-    background: #202C38;
-    color: #DDE3E8;
+
+    background: #18222D;
+
+    border-color: #3C5265;
+
+    color: #E8EEF3;
 }
 
-
-/* Profile */
 
 body.dark-mode .profile-image {
+
     background: #3F6F96;
-    color: #FFFFFF;
 }
 
-
-/* Profile name */
 
 body.dark-mode .profile-name {
-    color: #DDE3E8;
+
+    color: #E4EBF0;
 }
 
 
-/* Profile plan */
-
 body.dark-mode .profile-plan {
-    color: #8995A1;
+
+    color: #7F8C98;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+
+        left: 20px;
+
+        right: 20px;
+    }
+
+
+    .navbar-left h2 {
+
+        font-size: 18px;
+    }
+
+
+    .profile-info {
+
+        display: none;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+
+        top: 12px;
+
+        left: 12px;
+
+        right: 12px;
+
+        height: 58px;
+
+        border-radius: 18px;
+
+        padding: 0 14px;
+    }
+
+
+    .navbar-left {
+
+        gap: 7px;
+    }
+
+
+    .navbar-left svg {
+
+        width: 20px;
+
+        height: 20px;
+    }
+
+
+    .navbar-right {
+
+        gap: 8px;
+    }
+
+
+    .notification-btn {
+
+        width: 40px;
+
+        height: 40px;
+    }
+
+
+    .profile-image {
+
+        width: 38px;
+
+        height: 38px;
+    }
 }

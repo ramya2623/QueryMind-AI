@@ -3,7 +3,6 @@ import "../styles/sidebar.css";
 
 import {
   Brain,
-  House,
   LayoutDashboard,
   FolderOpen,
   MessageSquare,
@@ -18,52 +17,53 @@ function Sidebar() {
 
       <div>
 
-       <div className="sidebar-logo">
-  <Brain className="brand-icon" />
-  <h2>QueryMind AI</h2>
-</div>
+        {/* LOGO */}
+        <div className="sidebar-logo">
+          <Brain className="brand-icon" />
 
-       <nav className="sidebar-menu">
+          <h2>
+            QueryMind <span>AI</span>
+          </h2>
+        </div>
 
-  <NavLink to="/home">
-    <House size={20} />
-    <span>Home</span>
-  </NavLink>
+        {/* MENU */}
+        <nav className="sidebar-menu">
 
-  <NavLink to="/dashboard">
-    <LayoutDashboard size={20} />
-    <span>Dashboard</span>
-  </NavLink>
+          <NavLink to="/dashboard">
+            <LayoutDashboard size={20} />
+            <span>Dashboard</span>
+          </NavLink>
 
-  <NavLink to="/datasets">
-    <FolderOpen size={20} />
-    <span>Datasets</span>
-  </NavLink>
+          <NavLink to="/datasets">
+            <FolderOpen size={20} />
+            <span>Datasets</span>
+          </NavLink>
 
-  <NavLink to="/query">
-    <MessageSquare size={20} />
-    <span>Query AI</span>
-  </NavLink>
+          <NavLink to="/query">
+            <MessageSquare size={20} />
+            <span>Query AI</span>
+          </NavLink>
 
-  <NavLink to="/analytics">
-    <BarChart3 size={20} />
-    <span>Analytics</span>
-  </NavLink>
+          <NavLink to="/analytics">
+            <BarChart3 size={20} />
+            <span>Analytics</span>
+          </NavLink>
 
-  <NavLink to="/history">
-    <History size={20} />
-    <span>History</span>
-  </NavLink>
+          <NavLink to="/history">
+            <History size={20} />
+            <span>History</span>
+          </NavLink>
 
-  <NavLink to="/settings">
-    <Settings size={20} />
-    <span>Settings</span>
-  </NavLink>
+          <NavLink to="/settings">
+            <Settings size={20} />
+            <span>Settings</span>
+          </NavLink>
 
-</nav>
+        </nav>
 
       </div>
 
+      {/* FOOTER */}
       <div className="sidebar-footer">
 
         <div className="user-avatar">

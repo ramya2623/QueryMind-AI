@@ -1,203 +1,1408 @@
-/* =========================================
-   QUERYMIND AI — HOME
-   DARK BLUE THEME
-========================================= */
+@import url(
+  'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap'
+);
 
-.home {
+/* =====================================================
+   QUERYMIND AI — LANDING PAGE
+   DASHBOARD-ALIGNED BRAND SYSTEM
+===================================================== */
+
+.qm-home {
+    --bg: #0A0F16;
+    --surface: #111821;
+    --surface-2: #171F29;
+    --surface-hover: #202C38;
+    --border: #293540;
+    --border-light: #344657;
+
+    --text: #E7ECF1;
+    --muted: #AEB9C3;
+    --muted-dark: #737F8B;
+
+    --primary: #4B7FA8;
+    --primary-light: #6E9BC0;
+
     min-height: 100vh;
-    background: #0A0F16 !important;
-    color: #DDE3E8;
-}
-
-.home-content {
-    margin-left: 230px;
-    padding: 120px 35px 35px;
-    min-height: 100vh;
-
-    background: linear-gradient(
-        135deg,
-        #0A0F16 0%,
-        #0D141C 100%
-    ) !important;
-
-    color: #DDE3E8;
-}
-
-
-/* =========================
-        HERO
-========================= */
-
-.hero-section {
-    margin-bottom: 40px;
-}
-
-.hero-section h1 {
+    background: var(--bg);
+    color: var(--text);
     font-family: "Manrope", sans-serif;
-    font-size: 28px;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+.qm-home *,
+.qm-home *::before,
+.qm-home *::after {
+    box-sizing: border-box;
+}
+
+.qm-home button,
+.qm-home input,
+.qm-home textarea {
+    font-family: "Manrope", sans-serif;
+}
+
+.qm-home button:focus-visible {
+    outline: 2px solid var(--primary-light);
+    outline-offset: 3px;
+}
+
+
+/* =====================================================
+   TYPOGRAPHY SYSTEM
+===================================================== */
+
+.qm-eyebrow,
+.qm-metrics small,
+.qm-feature > small,
+.qm-cta small {
+    text-transform: uppercase;
+}
+
+
+/* Elegant blue italic emphasis */
+
+.qm-home h1 i,
+.qm-home h2 i,
+.qm-home h3 i {
+    color: var(--primary-light);
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -2px;
+}
+
+
+/* =====================================================
+   LOGO
+   Blue Brain Icon — NO BOX
+===================================================== */
+
+.qm-logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.qm-logo-mark {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+
+    color: var(--primary-light);
+
+    font-size: 20px;
+    font-weight: 700;
+
+    box-shadow: none;
+}
+
+.qm-logo-text {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    color: var(--text);
+}
+
+.qm-logo-text span {
+    color: var(--primary-light);
     font-weight: 600;
-
-    color: #DDE3E8 !important;
-
-    margin: 0 0 6px 0;
-}
-
-.hero-section p {
-    font-size: 15px;
-
-    color: #8F9BA8 !important;
-
-    margin: 0;
+    margin-left: 3px;
 }
 
 
-/* =========================
-      ACTION GRID
-========================= */
+/* =====================================================
+   NAVBAR
+===================================================== */
 
-.action-grid {
-    display: grid;
+.qm-navbar {
+    height: 76px;
+    padding: 0 5vw;
 
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    gap: 18px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10, 15, 22, .94);
+
+    position: relative;
+    z-index: 10;
 }
 
 
-/* =========================
-      ACTION CARD
-========================= */
+/* NAV LINKS */
 
-.action-card {
-    background: #111821 !important;
+.qm-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
 
-    border: 1px solid #293540 !important;
+    margin-left: auto;
+    margin-right: 30px;
+}
 
-    border-radius: 18px;
+.qm-nav-links button {
+    border: none;
+    background: transparent;
 
-    padding: 22px 24px;
+    color: var(--muted);
 
-    min-height: 130px;
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.25);
-
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+    font-size: 13px;
+    font-weight: 500;
 
     cursor: pointer;
+    padding: 8px 0;
+
+    transition: color .25s ease;
 }
 
-.action-card:hover {
-    transform: translateY(-5px);
-
-    background: #171F29 !important;
-
-    border-color: #344657 !important;
-
-    box-shadow:
-        0 22px 50px rgba(0, 0, 0, 0.35);
+.qm-nav-links button:hover {
+    color: var(--text);
 }
 
 
-/* =========================
-      CARD HEADER
-========================= */
+/* NAV BUTTON */
 
-.card-header {
+.qm-nav-button {
     display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 11px 17px;
+
+    border: 1px solid var(--border-light);
+    border-radius: 9px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+}
+
+.qm-nav-button span {
+    color: var(--primary-light);
+    font-size: 15px;
+}
+
+.qm-nav-button:hover {
+    background: var(--surface-hover);
+    border-color: #41617A;
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.qm-hero {
+    min-height: calc(100vh - 76px);
+
+    padding: 85px 5vw;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
     align-items: center;
 
-    gap: 12px;
+    gap: 65px;
 
-    margin-bottom: 12px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.qm-hero-content {
+    max-width: 620px;
 }
 
 
-/* =========================
-        ICON
-========================= */
+/* =====================================================
+   EYEBROW
+===================================================== */
 
-.action-icon {
-    width: 25px;
-    height: 25px;
+.qm-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
 
-    color: #5C91BA !important;
+    font-size: 10px;
+    font-weight: 600;
 
-    stroke-width: 1.8;
+    letter-spacing: 1.8px;
+
+    color: var(--muted);
+}
+
+.qm-eyebrow span {
+    width: 6px;
+    height: 6px;
 
     flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--primary-light);
+
+    box-shadow:
+        0 0 12px rgba(110, 155, 192, .45);
 }
 
 
-/* =========================
-        TITLE
-========================= */
+/* =====================================================
+   HERO HEADING
+===================================================== */
 
-.action-card h2 {
+.qm-hero h1 {
+    margin: 28px 0 25px;
+
     font-family: "Manrope", sans-serif;
 
-    color: #D5DCE2 !important;
+    font-size: clamp(54px, 6.8vw, 92px);
+
+    line-height: .98;
+
+    font-weight: 700;
+
+    letter-spacing: -4.5px;
+
+    color: var(--text);
+}
+
+.qm-hero h1 i {
+    color: var(--primary-light);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-style: italic;
+    font-weight: 400;
+
+    letter-spacing: -3px;
+}
+
+
+/* =====================================================
+   HERO DESCRIPTION
+===================================================== */
+
+.qm-hero-content > p {
+    max-width: 510px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.8;
 
     margin: 0;
+}
 
-    font-size: 21px;
 
+/* =====================================================
+   HERO BUTTONS
+===================================================== */
+
+.qm-actions {
+    display: flex;
+    gap: 12px;
+
+    margin-top: 32px;
+}
+
+.qm-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border: 1px solid #40739D;
+    border-radius: 9px;
+
+    background: #315F85;
+    color: #F2F6FA;
+
+    padding: 14px 20px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.qm-primary span {
+    color: #DCEAF5;
+    font-size: 16px;
+}
+
+.qm-primary:hover {
+    background: #3A709A;
+    border-color: #4B82AB;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(49, 95, 133, .25);
+}
+
+.qm-secondary {
+    background: transparent;
+
+    border: 1px solid var(--border-light);
+    border-radius: 9px;
+
+    color: var(--text);
+
+    padding: 14px 20px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease;
+}
+
+.qm-secondary:hover {
+    background: var(--surface);
+    border-color: #41617A;
+}
+
+
+/* =====================================================
+   PROCESS
+===================================================== */
+
+.qm-process {
+    margin-top: 58px;
+
+    display: flex;
+    align-items: center;
+}
+
+.qm-process-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.qm-process strong {
+    color: var(--primary-light);
+
+    font-size: 17px;
+    font-weight: 700;
+
+    letter-spacing: -.5px;
+}
+
+.qm-process span {
+    color: var(--muted-dark);
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+}
+
+.qm-process-line {
+    width: 48px;
+    height: 1px;
+
+    background: var(--border);
+
+    margin: 0 17px;
+}
+
+
+/* =====================================================
+   PREVIEW
+===================================================== */
+
+.qm-preview-wrapper {
+    position: relative;
+
+    min-height: 560px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qm-preview {
+    width: min(560px, 100%);
+
+    padding: 25px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow:
+        0 30px 80px rgba(0, .35);
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =====================================================
+   PREVIEW HEADER
+===================================================== */
+
+.qm-preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin-bottom: 25px;
+}
+
+.qm-preview-header small {
+    color: var(--muted-dark);
+
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+.qm-preview-header h3 {
+    margin: 7px 0 0;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    letter-spacing: -.3px;
+
+    color: var(--text);
+}
+
+.qm-dots {
+    color: var(--muted-dark);
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   CHART
+===================================================== */
+
+.qm-chart {
+    height: 230px;
+
+    position: relative;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.qm-chart-lines {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.qm-chart-lines span {
+    height: 1px;
+
+    background: var(--border);
+
+    opacity: .65;
+}
+
+.qm-chart svg {
+    position: absolute;
+
+    inset: 10px 0 0;
+
+    width: 100%;
+    height: calc(100% - 10px);
+}
+
+.qm-chart-line {
+    fill: none;
+
+    stroke: var(--primary-light);
+
+    stroke-width: 2.5;
+}
+
+.qm-chart-area {
+    fill: rgba(75, 127, 168, .10);
+}
+
+
+/* =====================================================
+   CHART TOOLTIP
+===================================================== */
+
+.qm-chart-tooltip {
+    position: absolute;
+
+    right: 25px;
+    top: 25px;
+
+    padding: 11px 14px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    background: var(--bg);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, .25);
+}
+
+.qm-chart-tooltip small {
+    color: var(--muted-dark);
+
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.qm-chart-tooltip strong {
+    font-size: 14px;
+    font-weight: 700;
+
+    color: var(--text);
+}
+
+.qm-chart-tooltip span {
+    color: #6E9C80;
+
+    font-size: 9px;
     font-weight: 600;
 }
 
 
-/* =========================
-      DESCRIPTION
-========================= */
+/* =====================================================
+   PREVIEW STATS
+===================================================== */
 
-.action-card p {
-    color: #8995A1 !important;
+.qm-stats {
+    display: grid;
 
-    line-height: 1.6;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 22px;
+}
+
+.qm-stats div {
+    padding-left: 15px;
+
+    border-left: 1px solid var(--border);
+}
+
+.qm-stats div:first-child {
+    border-left: none;
+    padding-left: 0;
+}
+
+.qm-stats small {
+    display: block;
+
+    color: var(--muted-dark);
+
+    font-size: 9px;
+    font-weight: 500;
+
+    text-transform: uppercase;
+}
+
+.qm-stats strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    color: var(--text);
+}
+
+
+/* =====================================================
+   LIVE ANALYTICS LABEL
+===================================================== */
+
+.qm-preview-label {
+    position: absolute;
+
+    top: 45px;
+    right: -15px;
+
+    padding: 10px 13px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: #0D141C;
+    color: var(--muted);
+
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    z-index: 4;
+}
+
+.qm-preview-label span {
+    display: inline-block;
+
+    width: 5px;
+    height: 5px;
+
+    margin-right: 7px;
+
+    border-radius: 50%;
+
+    background: #629078;
+
+    box-shadow:
+        0 0 8px rgba(98, 144, 120, .45);
+}
+
+
+/* =====================================================
+   AI INSIGHT
+===================================================== */
+
+.qm-insight {
+    position: absolute;
+
+    bottom: 35px;
+    left: -20px;
+
+    width: 230px;
+
+    padding: 15px;
+
+    display: flex;
+    gap: 11px;
+
+    background: var(--surface-2);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    box-shadow:
+        0 18px 35px rgba(0, 0, 0, .28);
+
+    z-index: 4;
+}
+
+.qm-insight-icon {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid #40739D;
+    border-radius: 50%;
+
+    color: var(--primary-light);
+
+    font-size: 13px;
+}
+
+.qm-insight small {
+    color: var(--muted-dark);
+
+    font-size: 7px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.qm-insight p {
+    margin: 5px 0 0;
+
+    font-size: 10px;
+    line-height: 1.5;
+
+    color: var(--muted);
+}
+
+.qm-insight b {
+    color: var(--primary-light);
+}
+
+
+/* =====================================================
+   METRICS
+===================================================== */
+
+.qm-metrics {
+    padding: 0 5vw;
+
+    display: grid;
+
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.qm-metrics > div {
+    min-height: 160px;
+
+    padding: 30px;
+
+    border-right: 1px solid var(--border);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.qm-metrics > div:first-child {
+    padding-left: 0;
+}
+
+.qm-metrics > div:last-child {
+    border-right: none;
+}
+
+.qm-metrics small {
+    color: var(--primary-light);
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+}
+
+.qm-metrics p {
+    margin: 10px 0 0;
+
+    color: var(--muted);
+
+    font-size: 16px;
+    line-height: 1.45;
+
+    font-weight: 500;
+}
+
+.qm-metrics strong {
+    color: var(--primary-light);
+
+    font-size: 36px;
+    font-weight: 700;
+
+    letter-spacing: -1.5px;
+}
+
+.qm-metrics span {
+    margin-top: 5px;
+
+    color: var(--muted-dark);
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+.qm-features {
+    padding: 120px 5vw;
+}
+
+.qm-section-title h2 {
+    margin: 20px 0 60px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(48px, 5.5vw, 76px);
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: -4px;
+}
+
+.qm-section-title h2 i {
+    color: var(--primary-light);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-style: italic;
+    font-weight: 400;
+}
+
+
+/* =====================================================
+   FEATURE GRID
+===================================================== */
+
+.qm-feature-grid {
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr 1fr;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.qm-feature {
+    min-height: 400px;
+
+    padding: 35px;
+
+    border-right: 1px solid var(--border);
+}
+
+.qm-feature:last-child {
+    border-right: none;
+}
+
+.qm-feature > small {
+    color: var(--primary-light);
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.qm-feature h3 {
+    margin-top: 155px;
+
+    font-size: 27px;
+    font-weight: 700;
+
+    letter-spacing: -.8px;
+}
+
+.qm-feature p {
+    color: var(--muted);
+
+    font-size: 12px;
+    line-height: 1.7;
+
+    max-width: 320px;
+}
+
+
+/* =====================================================
+   QUERY DEMO
+===================================================== */
+
+.qm-query-demo {
+    margin-top: 25px;
+
+    padding: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+.qm-query-demo strong {
+    color: var(--primary-light);
 
     font-size: 14px;
-
-    margin: 0;
 }
 
 
-/* =========================
-        ARROW
-========================= */
+/* =====================================================
+   BAR CHART
+===================================================== */
 
-.card-arrow {
-    margin-left: auto;
+.qm-bars {
+    height: 100px;
 
-    font-size: 20px;
+    margin-top: 60px;
 
-    color: #687581 !important;
+    display: flex;
+    align-items: flex-end;
 
-    transition: 0.3s;
+    gap: 8px;
 }
 
-.action-card:hover .card-arrow {
-    transform: translateX(6px);
+.qm-bars span {
+    flex: 1;
 
-    color: #5C91BA !important;
+    background: var(--primary);
+
+    border-radius: 3px 3px 0 0;
+
+    opacity: .85;
+}
+
+.qm-bars span:nth-child(1) {
+    height: 35%;
+}
+
+.qm-bars span:nth-child(2) {
+    height: 55%;
+}
+
+.qm-bars span:nth-child(3) {
+    height: 45%;
+}
+
+.qm-bars span:nth-child(4) {
+    height: 72%;
+}
+
+.qm-bars span:nth-child(5) {
+    height: 62%;
+}
+
+.qm-bars span:nth-child(6) {
+    height: 90%;
 }
 
 
-/* =========================
-       RESPONSIVE
-========================= */
+/* =====================================================
+   INSIGHT LINES
+===================================================== */
 
-@media (max-width: 900px) {
+.qm-insight-lines {
+    margin-top: 65px;
+}
 
-    .home-content {
-        margin-left: 230px;
+.qm-insight-lines span {
+    display: block;
+
+    height: 5px;
+
+    margin-bottom: 9px;
+
+    background: var(--border);
+
+    border-radius: 3px;
+}
+
+.qm-insight-lines span:nth-child(1) {
+    width: 85%;
+
+    background: var(--primary);
+}
+
+.qm-insight-lines span:nth-child(2) {
+    width: 60%;
+}
+
+.qm-insight-lines span:nth-child(3) {
+    width: 92%;
+
+    background: var(--primary);
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.qm-cta {
+    margin: 0 5vw 90px;
+
+    padding: 55px;
+
+    min-height: 300px;
+
+    display: grid;
+
+    grid-template-columns: .5fr 1fr .5fr;
+
+    align-items: center;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, .18);
+}
+
+
+/* CTA LOGO — NO BOX */
+
+.qm-cta-mark {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+
+    border: none;
+    border-radius: 0;
+
+    color: var(--primary-light);
+
+    font-size: 30px;
+    font-weight: 700;
+
+    box-shadow: none;
+}
+
+.qm-cta small {
+    color: var(--primary-light);
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+}
+
+.qm-cta h2 {
+    margin: 15px 0 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(42px, 4.5vw, 68px);
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: -3px;
+}
+
+.qm-cta h2 i {
+    color: var(--primary-light);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-style: italic;
+    font-weight: 400;
+}
+
+.qm-cta .qm-primary {
+    justify-self: end;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.qm-footer {
+    min-height: 100px;
+
+    padding: 0 5vw;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+.qm-footer p,
+.qm-footer > span {
+    color: var(--muted-dark);
+
+    font-size: 10px;
+}
+
+
+/* Footer logo — NO BOX */
+
+.qm-footer .qm-logo-mark {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 0;
+
+    font-size: 18px;
+
+    background: transparent;
+    border: none;
+
+    box-shadow: none;
+
+    color: var(--primary-light);
+}
+
+.qm-footer .qm-logo-text {
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   RESPONSIVE — TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .qm-nav-links {
+        display: none;
     }
 
-    .action-grid {
+    .qm-hero {
         grid-template-columns: 1fr;
+
+        padding-top: 70px;
+        padding-bottom: 80px;
+    }
+
+    .qm-hero-content {
+        max-width: 700px;
+    }
+
+    .qm-preview-wrapper {
+        min-height: 500px;
+    }
+
+    .qm-feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .qm-feature {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .qm-feature:last-child {
+        border-bottom: none;
+    }
+
+    .qm-metrics {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .qm-metrics > div:nth-child(2) {
+        border-right: none;
+    }
+
+    .qm-cta {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .qm-cta .qm-primary {
+        justify-self: start;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE — MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .qm-navbar {
+        height: 68px;
+        padding: 0 20px;
+    }
+
+    .qm-logo-text {
+        font-size: 16px;
+    }
+
+    .qm-logo-mark {
+        width: 33px;
+        height: 33px;
+        font-size: 18px;
+    }
+
+    .qm-nav-button {
+        display: none;
+    }
+
+    .qm-hero {
+        padding: 60px 20px;
+        gap: 45px;
+    }
+
+    .qm-hero h1 {
+        font-size: 52px;
+        letter-spacing: -3px;
+    }
+
+    .qm-hero h1 i {
+        letter-spacing: -2px;
+    }
+
+    .qm-hero-content > p {
+        font-size: 13px;
+    }
+
+    .qm-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .qm-primary,
+    .qm-secondary {
+        width: 100%;
+    }
+
+    .qm-process {
+        margin-top: 45px;
+    }
+
+    .qm-process-line {
+        width: 25px;
+        margin: 0 10px;
+    }
+
+    .qm-preview-wrapper {
+        min-height: 430px;
+    }
+
+    .qm-preview {
+        padding: 18px;
+    }
+
+    .qm-preview-label {
+        top: 15px;
+        right: -5px;
+    }
+
+    .qm-insight {
+        left: -5px;
+        bottom: 10px;
+        width: 210px;
+    }
+
+    .qm-chart {
+        height: 190px;
+    }
+
+    .qm-metrics {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .qm-metrics > div {
+        min-height: 130px;
+
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .qm-metrics > div:last-child {
+        border-bottom: none;
+    }
+
+    .qm-metrics > div:first-child {
+        padding-left: 30px;
+    }
+
+    .qm-features {
+        padding: 80px 20px;
+    }
+
+    .qm-section-title h2 {
+        font-size: 46px;
+
+        letter-spacing: -3px;
+
+        margin-bottom: 45px;
+    }
+
+    .qm-section-title h2 i {
+        letter-spacing: -2px;
+    }
+
+    .qm-feature {
+        min-height: 350px;
+        padding: 28px;
+    }
+
+    .qm-feature h3 {
+        margin-top: 100px;
+    }
+
+    .qm-cta {
+        margin: 0 20px 70px;
+
+        padding: 30px;
+
+        min-height: auto;
+    }
+
+    .qm-cta h2 {
+        font-size: 42px;
+        letter-spacing: -2px;
+    }
+
+    .qm-footer {
+        padding: 25px 20px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 15px;
     }
 }

@@ -1,6 +1,7 @@
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import "../styles/analytics.css";
+import API from "../services/api";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -40,9 +41,7 @@ function Analytics() {
 
             try {
 
-               const response = await axios.get(
-    "https://querymind-ai-vwp2.onrender.com/analytics"
-);
+              const response = await API.get("/analytics");
 
                 console.log("Analytics:", response.data);
 

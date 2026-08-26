@@ -1,225 +1,606 @@
-.history-page{
-    min-height:100vh;
-    background:var(--cream);
+@import url(
+  'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap'
+);
+
+
+/* =====================================================
+   QUERYMIND AI — HISTORY
+   DASHBOARD STYLE
+===================================================== */
+
+.history-page {
+
+    min-height: 100vh;
+
+    background: #0A0F16;
+
+    color: #E7ECF1;
+
+    font-family: "Manrope", sans-serif;
 }
 
-.history-content{
 
-    margin-left:230px;
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
 
-    padding:120px 35px 35px;
+.history-content {
 
-    min-height:100vh;
+    margin-left: 230px;
 
-    background:linear-gradient(
-        135deg,
-        #fcfaf7,
-        #f6efe7
-    );
+    min-height: 100vh;
 
+    box-sizing: border-box;
+
+    padding: 120px 40px 60px;
+
+    background:
+        radial-gradient(
+            circle at 75% 0%,
+            rgba(75, 127, 168, 0.08),
+            transparent 35%
+        ),
+        #0A0F16;
+
+    color: #E7ECF1;
 }
 
-/* ===========================
-        Header
-=========================== */
 
-.history-header{
+/* =====================================================
+   HEADER
+===================================================== */
 
-    margin-bottom:30px;
+.history-header {
 
+    margin-bottom: 38px;
 }
 
-.history-header h1{
 
-    font-family:var(--font-heading);
+/* EYEBROW */
 
-    font-size:30px;
+.history-header::before {
 
-    color:var(--coffee);
+    content: "YOUR ACTIVITY";
 
-    margin-bottom:8px;
+    display: block;
 
+    margin-bottom: 18px;
+
+    color: #6E9BC0;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
 }
 
-.history-header p{
 
-    color:#7A6E64;
+/* MAIN HEADING */
 
-    font-size:16px;
+.history-header h1 {
 
+    margin: 0 0 12px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(42px, 4vw, 58px);
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: -3px;
+
+    color: #E7ECF1;
 }
 
-/* ===========================
-        Search
-=========================== */
 
-.search-box{
+/*
+   If you use:
 
-    display:flex;
+   <i>history.</i>
 
-    align-items:center;
+   it will automatically match Dashboard.
+*/
 
-    gap:12px;
+.history-header h1 i {
 
-    background:white;
+    color: #6E9BC0;
 
-    padding:14px 18px;
+    font-style: italic;
 
-    border-radius:18px;
+    font-weight: 500;
+}
 
-    margin-bottom:35px;
+
+.history-header p {
+
+    margin: 0;
+
+    max-width: 600px;
+
+    color: #AEB9C3;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-bottom: 45px;
+
+    padding: 15px 18px;
+
+    background: #111821;
+
+    border: 1px solid #293540;
+
+    border-radius: 11px;
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,.05);
+        0 10px 30px rgba(0, 0, 0, 0.18);
 
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
-.search-box svg{
 
-    color:#8A7C72;
+.search-box:focus-within {
 
-}
+    background: #131D27;
 
-.search-box input{
-
-    flex:1;
-
-    border:none;
-
-    outline:none;
-
-    font-size:15px;
-
-    background:transparent;
-
-    color:#5A473B;
-
-}
-
-/* ===========================
-        Sections
-=========================== */
-
-.history-section{
-
-    margin-bottom:35px;
-
-}
-
-.history-section h2{
-
-    font-family:var(--font-heading);
-
-    font-size:24px;
-
-    color:var(--coffee);
-
-    margin-bottom:14px;
-
-}
-/* ===========================
-        Cards
-=========================== */
-
-.history-card{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:18px 20px;
-
-    margin-bottom:16px;
-
-    border-radius:20px;
-
-    background:rgba(255,255,255,.78);
-
-    backdrop-filter:blur(16px);
+    border-color: #41617A;
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,.05);
-
-    transition:.3s;
-
-    cursor:pointer;
-
+        0 12px 35px rgba(0, 0, 0, 0.25);
 }
 
-.history-card:hover{
 
-    transform:translateY(-5px);
+.search-box svg {
+
+    flex-shrink: 0;
+
+    color: #6E9BC0;
+
+    width: 18px;
+
+    height: 18px;
+}
+
+
+.search-box input {
+
+    flex: 1;
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #E7ECF1;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+.search-box input::placeholder {
+
+    color: #737F8B;
+}
+
+
+/* =====================================================
+   HISTORY SECTION
+===================================================== */
+
+.history-section {
+
+    margin-bottom: 45px;
+}
+
+
+/* SECTION TITLE */
+
+.history-section h2 {
+
+    margin: 0 0 17px;
+
+    color: #6E9BC0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   HISTORY CARD
+===================================================== */
+
+.history-card {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px 22px;
+
+    margin-bottom: 12px;
+
+    border-radius: 13px;
+
+    background: #111821;
+
+    border: 1px solid #293540;
 
     box-shadow:
-        0 18px 40px rgba(0,0,0,.08);
+        0 8px 25px rgba(0, 0, 0, 0.14);
 
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+
+    cursor: pointer;
 }
 
-.left{
 
-    display:flex;
+.history-card:hover {
 
-    align-items:center;
+    transform: translateY(-3px);
 
-    gap:18px;
+    background: #151F29;
 
+    border-color: #3A4D5F;
+
+    box-shadow:
+        0 16px 35px rgba(0, 0, 0, 0.25);
 }
 
-.left svg{
 
-    color:var(--coffee);
+/* =====================================================
+   LEFT CONTENT
+===================================================== */
 
+.left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    min-width: 0;
 }
 
-.left h3{
 
-    margin:0;
+/* ICON */
 
-    color:var(--coffee);
+.left > svg {
 
-    font-size:17px;
+    width: 20px;
 
+    height: 20px;
+
+    flex-shrink: 0;
+
+    color: #6E9BC0;
+
+    stroke-width: 1.8;
 }
 
-.left span{
 
-    color:#8A7D72;
+/* QUERY TEXT */
 
-    font-size:13px;
+.left h3 {
 
+    margin: 0;
+
+    color: #E1E9EF;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: -0.15px;
+
+    line-height: 1.5;
 }
 
-.history-card>svg{
 
-    color:#8A7D72;
+.left span {
 
+    display: block;
+
+    margin-top: 5px;
+
+    color: #737F8B;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 500;
 }
 
-.query-error{
-    margin-bottom:20px;
-    padding:13px 16px;
-    border:1px solid #E1C8B8;
-    border-radius:14px;
-    background:#FFF4ED;
-    color:#7A4933;
-    font-size:14px;
+
+/* RIGHT ARROW */
+
+.history-card > svg {
+
+    flex-shrink: 0;
+
+    color: #657587;
+
+    width: 17px;
+
+    height: 17px;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
-.history-card.clickable {
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+.history-card:hover > svg {
+
+    color: #6E9BC0;
+
+    transform: translateX(3px);
 }
 
-.history-card.clickable:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-}
+
+/* =====================================================
+   DATASET INFORMATION
+===================================================== */
 
 .history-dataset {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 6px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 7px;
+
+    color: #737F8B;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 500;
+}
+
+
+.history-dataset svg {
+
+    width: 13px;
+
+    height: 13px;
+
+    color: #5D94C2;
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.query-error {
+
+    margin-bottom: 22px;
+
+    padding: 14px 17px;
+
+    border: 1px solid #514047;
+
+    border-radius: 11px;
+
+    background: #24191B;
+
+    color: #D9A5AA;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   CLICKABLE HISTORY
+===================================================== */
+
+.history-card.clickable {
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.history-card.clickable:hover {
+
+    transform: translateY(-3px);
+
+    border-color: #3A4D5F;
+
+    box-shadow:
+        0 16px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.history-empty {
+
+    padding: 65px 30px;
+
+    text-align: center;
+
+    background: #111821;
+
+    border: 1px solid #293540;
+
+    border-radius: 15px;
+}
+
+
+.history-empty h3 {
+
+    margin: 0 0 8px;
+
+    color: #DDE5EB;
+
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+
+.history-empty p {
+
+    margin: 0;
+
+    color: #737F8B;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   RESPONSIVE — TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .history-content {
+
+        margin-left: 0;
+
+        padding: 100px 20px 45px;
+    }
+
+    .history-header h1 {
+
+        font-size: 45px;
+
+        letter-spacing: -2.5px;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE — MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .history-content {
+
+        padding: 90px 18px 40px;
+    }
+
+    .history-header {
+
+        margin-bottom: 30px;
+    }
+
+    .history-header h1 {
+
+        font-size: 40px;
+
+        letter-spacing: -2px;
+    }
+
+    .history-header p {
+
+        font-size: 13px;
+    }
+
+    .search-box {
+
+        margin-bottom: 35px;
+
+        padding: 14px 15px;
+    }
+
+    .history-section {
+
+        margin-bottom: 35px;
+    }
+
+    .history-card {
+
+        align-items: flex-start;
+
+        gap: 14px;
+
+        padding: 17px;
+    }
+
+    .left {
+
+        gap: 12px;
+    }
+
+    .left h3 {
+
+        font-size: 13px;
+    }
+
+    .left span {
+
+        font-size: 10px;
+    }
 }

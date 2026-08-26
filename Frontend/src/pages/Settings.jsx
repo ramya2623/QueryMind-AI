@@ -80,37 +80,6 @@ function Settings() {
 
           </div>
 
-
-          {/* APPEARANCE */}
-
-          <div
-            className="setting-card"
-            onClick={handleAppearance}
-          >
-
-            <div className="setting-left">
-
-              <Moon />
-
-              <div>
-
-                <h3>Appearance</h3>
-
-                <p>
-                  {darkMode
-                    ? "Dark mode enabled."
-                    : "Light mode enabled."}
-                </p>
-
-              </div>
-
-            </div>
-
-            <ChevronRight />
-
-          </div>
-
-
           {/* NOTIFICATIONS */}
 
           <div

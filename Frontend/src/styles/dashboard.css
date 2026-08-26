@@ -1,142 +1,829 @@
-/* =========================================
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* =====================================================
    QUERYMIND AI — DASHBOARD
-   DARK BLUE THEME
-========================================= */
+   Premium dark workspace
+===================================================== */
 
 .dashboard {
     min-height: 100vh;
-
-    background: var(--background);
-
-    color: var(--text);
+    background: #080C12;
+    color: #E8EDF3;
+    font-family: "Manrope", sans-serif;
 }
+
+.dashboard *,
+.dashboard *::before,
+.dashboard *::after {
+    box-sizing: border-box;
+}
+
+.dashboard button,
+.dashboard input,
+.dashboard textarea,
+.dashboard select {
+    font-family: "Manrope", sans-serif;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
 
 .dashboard-body {
     display: flex;
+    min-height: 100vh;
 }
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
 
 .dashboard-content {
     flex: 1;
-
     margin-left: 230px;
-
-    padding: 120px 40px 40px;
-
-    background: linear-gradient(
-        135deg,
-        #0A0F16,
-        #0D141C
-    );
-
     min-height: 100vh;
 
-    color: var(--text);
+    padding: 110px 56px 80px;
+
+    background:
+        radial-gradient(
+            circle at 75% 5%,
+            rgba(76, 137, 190, 0.12),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 20% 35%,
+            rgba(54, 93, 130, 0.06),
+            transparent 30%
+        ),
+        #080C12;
+
+    overflow-x: hidden;
 }
 
 
-/* =======================
-        WELCOME
-======================= */
+/* =====================================================
+   SMALL EYEBROW
+===================================================== */
 
-.welcome-section {
-    margin-bottom: 32px;
+.dashboard-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 20px;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    color: #71808F;
 }
 
-.welcome-section h1 {
-    font-size: 34px;
+.dashboard-eyebrow span {
+    width: 6px;
+    height: 6px;
 
-    font-family: "Manrope", sans-serif;
+    border-radius: 50%;
 
-    font-weight: 600;
-
-    color: #DDE3E8;
-
-    margin-bottom: 8px;
-}
-
-.welcome-section p {
-    color: #8F9BA8;
-
-    font-size: 15px;
-
-    margin-top: 0;
-}
-
-
-/* =======================
-        STATS
-======================= */
-
-.stats-section {
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 20px;
-}
-
-.stat-card {
-    background: #111821;
-
-    border: 1px solid #293540;
-
-    border-radius: 18px;
-
-    padding: 25px;
+    background: #6F9FC4;
 
     box-shadow:
-        0 10px 35px rgba(0, 0, 0, 0.25);
-
-    transition: 0.3s;
+        0 0 0 4px rgba(111, 159, 196, 0.08);
 }
 
-.stat-card:hover {
+
+/* =====================================================
+   WELCOME / HERO
+===================================================== */
+
+.dashboard-welcome {
+    max-width: 780px;
+    margin-bottom: 64px;
+}
+
+.dashboard-welcome h1 {
+    margin: 0;
+
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.04;
+
+    font-weight: 700;
+    letter-spacing: -3.5px;
+
+    color: #E8EDF3;
+}
+
+.dashboard-welcome h1 i {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    letter-spacing: -2px;
+
+    color: #8AAAC4;
+}
+
+.dashboard-welcome p {
+    max-width: 540px;
+
+    margin: 26px 0 0;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: #8996A3;
+}
+
+
+/* =====================================================
+   QUICK ACTIONS
+===================================================== */
+
+.dashboard-actions {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+
+    gap: 18px;
+
+    max-width: 1100px;
+
+    margin-bottom: 110px;
+}
+
+
+/* =====================================================
+   ACTION CARD
+===================================================== */
+
+.dashboard-action-card {
+    position: relative;
+
+    min-height: 350px;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    background: rgba(15, 21, 29, 0.88);
+
+    border: 1px solid #202B36;
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.dashboard-action-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    top: -100px;
+    right: -90px;
+
+    border-radius: 50%;
+
+    background: rgba(92, 143, 183, 0.07);
+
+    filter: blur(2px);
+
+    transition: transform 0.5s ease;
+}
+
+.dashboard-action-card:hover {
     transform: translateY(-5px);
 
-    background: #171F29;
+    background: #111922;
 
     border-color: #344657;
+
+    box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.dashboard-action-card:hover::before {
+    transform: scale(1.25);
 }
 
 
-/* =======================
-      STAT LABEL
-======================= */
+/* =====================================================
+   FEATURED ACTION
+===================================================== */
 
-.stat-card h3 {
-    font-size: 14px;
+.dashboard-action-card.featured {
+    background:
+        linear-gradient(
+            145deg,
+            #121E29 0%,
+            #0F1821 55%,
+            #0C131B 100%
+        );
 
-    color: #8995A1;
+    border-color: #2E4355;
+}
 
-    margin-bottom: 16px;
+.dashboard-action-card.featured::before {
+    width: 340px;
+    height: 340px;
 
-    font-weight: 500;
+    top: -150px;
+    right: -110px;
+
+    background: rgba(83, 142, 190, 0.12);
+}
+
+.dashboard-action-card.featured:hover {
+    border-color: #45647D;
 }
 
 
-/* =======================
-      STAT NUMBER
-======================= */
+/* =====================================================
+   ACTION TOP
+===================================================== */
 
-.stat-card h2 {
-    font-size: 34px;
+.action-top {
+    position: relative;
+    z-index: 2;
 
-    color: #D5DCE2;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
 
-    margin-bottom: 8px;
+.action-icon {
+    width: 44px;
+    height: 44px;
 
-    font-family: "Manrope", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    font-weight: 600;
+    border-radius: 12px;
+
+    background: #18222D;
+
+    border: 1px solid #293845;
+
+    font-size: 21px;
+    font-weight: 400;
+
+    color: #91B4D0;
+}
+
+.featured .action-icon {
+    background: rgba(91, 145, 190, 0.12);
+    border-color: rgba(91, 145, 190, 0.25);
+
+    color: #9FC2DD;
+}
+
+.action-number {
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: #4E5B67;
 }
 
 
-/* =======================
-      STAT DESCRIPTION
-======================= */
+/* =====================================================
+   ACTION CONTENT
+===================================================== */
 
-.stat-card span {
-    color: #737F8B;
+.action-content {
+    position: relative;
+    z-index: 2;
+}
+
+.action-content h2 {
+    margin: 0 0 12px;
+
+    font-size: 25px;
+    line-height: 1.2;
+
+    font-weight: 700;
+    letter-spacing: -0.8px;
+
+    color: #E5EBF0;
+}
+
+.action-content p {
+    max-width: 390px;
+
+    margin: 0 0 25px;
 
     font-size: 13px;
+    line-height: 1.7;
+
+    color: #84919E;
+}
+
+
+/* =====================================================
+   ACTION BUTTON
+===================================================== */
+
+.action-content button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    color: #A5C4DB;
+
+    cursor: pointer;
+
+    transition: gap 0.25s ease;
+}
+
+.action-content button span {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.dashboard-action-card:hover .action-content button {
+    gap: 17px;
+}
+
+
+/* =====================================================
+   WORKFLOW SECTION
+===================================================== */
+
+.workflow-section {
+    max-width: 1100px;
+
+    padding: 0 0 110px;
+
+    border-bottom: 1px solid #18212A;
+
+    display: grid;
+    grid-template-columns: 0.8fr 1.4fr;
+
+    gap: 80px;
+}
+
+.workflow-heading {
+    padding-top: 5px;
+}
+
+.workflow-heading .dashboard-eyebrow {
+    margin-bottom: 18px;
+}
+
+.workflow-heading h2 {
+    margin: 0;
+
+    font-size: 40px;
+    line-height: 1.08;
+
+    font-weight: 700;
+    letter-spacing: -2px;
+
+    color: #E4EAF0;
+}
+
+.workflow-heading h2 i {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+
+    color: #88A9C3;
+}
+
+
+/* =====================================================
+   WORKFLOW STEPS
+===================================================== */
+
+.workflow-steps {
+    display: flex;
+    flex-direction: column;
+}
+
+.workflow-step {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 48px 1fr;
+
+    column-gap: 20px;
+
+    padding-bottom: 36px;
+}
+
+.workflow-step:last-child {
+    padding-bottom: 0;
+}
+
+
+/* =====================================================
+   STEP NUMBER
+===================================================== */
+
+.step-number {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #101821;
+
+    border: 1px solid #283540;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    color: #8194A4;
+}
+
+
+/* =====================================================
+   STEP LINE
+===================================================== */
+
+.step-line {
+    position: absolute;
+
+    left: 20px;
+    top: 43px;
+
+    width: 1px;
+    height: calc(100% - 30px);
+
+    background: linear-gradient(
+        to bottom,
+        #344552,
+        #17212A
+    );
+}
+
+.workflow-step:last-child .step-line {
+    display: none;
+}
+
+
+/* =====================================================
+   STEP CONTENT
+===================================================== */
+
+.workflow-step h3 {
+    margin: 1px 0 7px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #DCE4EA;
+}
+
+.workflow-step p {
+    max-width: 390px;
+
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 1.7;
+
+    color: #75828E;
+}
+
+
+/* =====================================================
+   BRAND MESSAGE
+===================================================== */
+
+.dashboard-message {
+    position: relative;
+
+    max-width: 1100px;
+
+    margin-top: 90px;
+
+    padding: 46px 50px;
+
+    display: grid;
+    grid-template-columns: 65px 1fr auto;
+
+    align-items: center;
+
+    gap: 35px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            120deg,
+            #111A23,
+            #0D141C
+        );
+
+    border: 1px solid #25323E;
+    border-radius: 22px;
+}
+
+.dashboard-message::after {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    right: -180px;
+    top: -230px;
+
+    border-radius: 50%;
+
+    background: rgba(75, 133, 176, 0.09);
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   MESSAGE MARK
+===================================================== */
+
+.message-mark {
+    position: relative;
+    z-index: 2;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #17222D;
+
+    border: 1px solid #2D3C49;
+
+    font-family: Georgia, serif;
+    font-size: 25px;
+
+    color: #9AB8CE;
+}
+
+
+/* =====================================================
+   MESSAGE CONTENT
+===================================================== */
+
+.message-content {
+    position: relative;
+    z-index: 2;
+}
+
+.message-content small {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #61717F;
+}
+
+.message-content h2 {
+    margin: 0;
+
+    font-size: 28px;
+    line-height: 1.15;
+
+    font-weight: 700;
+    letter-spacing: -1px;
+
+    color: #E5EBF0;
+}
+
+.message-content h2 i {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+
+    color: #8EADC4;
+}
+
+.message-content p {
+    max-width: 500px;
+
+    margin: 14px 0 0;
+
+    font-size: 12px;
+    line-height: 1.7;
+
+    color: #7B8995;
+}
+
+
+/* =====================================================
+   MESSAGE BUTTON
+===================================================== */
+
+.dashboard-message > button {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px 18px;
+
+    border: 1px solid #344957;
+    border-radius: 9px;
+
+    background: #17232D;
+
+    color: #A7C4D9;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        gap 0.25s ease;
+}
+
+.dashboard-message > button span {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.dashboard-message > button:hover {
+    background: #1D2C38;
+    border-color: #486274;
+
+    gap: 17px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .dashboard-content {
+        padding-left: 38px;
+        padding-right: 38px;
+    }
+
+    .dashboard-actions {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .workflow-section {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .workflow-heading h2 {
+        font-size: 36px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .dashboard-content {
+        margin-left: 0;
+
+        padding:
+            100px
+            20px
+            50px;
+    }
+
+    .dashboard-welcome {
+        margin-bottom: 45px;
+    }
+
+    .dashboard-welcome h1 {
+        font-size: 42px;
+        letter-spacing: -2px;
+    }
+
+    .dashboard-welcome p {
+        font-size: 13px;
+    }
+
+    .dashboard-actions {
+        grid-template-columns: 1fr;
+
+        margin-bottom: 75px;
+    }
+
+    .dashboard-action-card {
+        min-height: 310px;
+    }
+
+    .workflow-section {
+        padding-bottom: 75px;
+    }
+
+    .workflow-heading h2 {
+        font-size: 34px;
+    }
+
+    .dashboard-message {
+        grid-template-columns: 1fr;
+
+        padding: 32px;
+
+        gap: 22px;
+    }
+
+    .message-mark {
+        width: 48px;
+        height: 48px;
+
+        font-size: 21px;
+    }
+
+    .message-content h2 {
+        font-size: 25px;
+    }
+
+    .dashboard-message > button {
+        justify-self: start;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .dashboard-content {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .dashboard-welcome h1 {
+        font-size: 36px;
+    }
+
+    .dashboard-action-card {
+        min-height: 290px;
+        padding: 24px;
+    }
+
+    .workflow-step {
+        grid-template-columns: 42px 1fr;
+        column-gap: 15px;
+    }
+
+    .step-number {
+        width: 38px;
+        height: 38px;
+    }
+
+    .step-line {
+        left: 18px;
+    }
+
+    .dashboard-message {
+        padding: 26px;
+    }
 }

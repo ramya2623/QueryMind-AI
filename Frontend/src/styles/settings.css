@@ -1,88 +1,134 @@
-/* =========================================
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* =====================================================
    QUERYMIND AI — SETTINGS
-   DARK BLUE THEME
-========================================= */
+   CONSISTENT DARK BLUE BRAND SYSTEM
+===================================================== */
 
 .settings-page {
     min-height: 100vh;
-    background: var(--background);
-    color: var(--text);
+    background: #0A0F16;
+    color: #E7ECF1;
+    font-family: "Manrope", sans-serif;
 }
+
+.settings-page *,
+.settings-page *::before,
+.settings-page *::after {
+    box-sizing: border-box;
+}
+
+.settings-page button,
+.settings-page input,
+.settings-page textarea,
+.settings-page select {
+    font-family: "Manrope", sans-serif;
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
 
 .settings-content {
     margin-left: 230px;
-
-    padding: 120px 35px 35px;
-
     min-height: 100vh;
+    padding: 120px 40px 60px;
 
     background:
-        linear-gradient(
-            135deg,
-            #0A0F16,
-            #0D141C
-        );
+        radial-gradient(
+            circle at 75% 0%,
+            rgba(75, 127, 168, 0.08),
+            transparent 35%
+        ),
+        #0A0F16;
 
-    color: var(--text);
+    color: #E7ECF1;
 }
 
 
-/* =======================
-        HEADER
-======================= */
+/* =====================================================
+   HEADER
+===================================================== */
 
 .settings-header {
-    margin-bottom: 35px;
+    margin-bottom: 40px;
+}
+
+.settings-header::before {
+    content: "PREFERENCES";
+    display: block;
+    margin-bottom: 18px;
+
+    color: #6E9BC0;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
 }
 
 .settings-header h1 {
+    margin: 0 0 12px;
+
+    color: #E7ECF1;
     font-family: "Manrope", sans-serif;
+    font-size: clamp(42px, 4vw, 58px);
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -3px;
+}
 
-    font-size: 30px;
-
-    font-weight: 600;
-
-    color: #DDE3E8;
-
-    margin-bottom: 8px;
+.settings-header h1 i {
+    color: #6E9BC0;
+    font-style: italic;
+    font-weight: 500;
 }
 
 .settings-header p {
-    color: #8F9BA8;
+    margin: 0;
+    max-width: 600px;
+
+    color: #AEB9C3;
+    font-size: 14px;
+    line-height: 1.8;
 }
 
 
-/* =======================
-        CARDS
-======================= */
+/* =====================================================
+   SETTINGS LIST
+===================================================== */
 
 .settings-list {
     display: flex;
-
     flex-direction: column;
-
-    gap: 18px;
+    gap: 13px;
+    max-width: 900px;
 }
+
+
+/* =====================================================
+   SETTING CARD
+===================================================== */
 
 .setting-card {
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 
-    padding: 18px 22px;
+    width: 100%;
+    padding: 20px 22px;
 
     background: #111821;
-
     border: 1px solid #293540;
-
-    border-radius: 18px;
+    border-radius: 13px;
 
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.25);
+        0 8px 25px rgba(0, 0, 0, 0.14);
 
-    transition: 0.3s;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 
     cursor: pointer;
 }
@@ -90,89 +136,116 @@
 .setting-card:hover {
     transform: translateY(-3px);
 
-    background: #171F29;
-
-    border-color: #344657;
+    background: #151F29;
+    border-color: #3A4D5F;
 
     box-shadow:
-        0 18px 40px rgba(0, 0, 0, 0.35);
+        0 16px 35px rgba(0, 0, 0, 0.25);
 }
+
+
+/* =====================================================
+   LEFT CONTENT
+===================================================== */
 
 .setting-left {
     display: flex;
-
     align-items: center;
+    gap: 16px;
 
-    gap: 14px;
+    min-width: 0;
 }
 
 .setting-left svg {
-    color: #4B7FA8;
+    width: 20px;
+    height: 20px;
 
-    width: 22px;
+    flex-shrink: 0;
 
-    height: 22px;
+    color: #6E9BC0;
+    stroke-width: 1.8;
 }
 
 .setting-left h3 {
-    font-size: 18px;
-
     margin: 0;
 
-    color: #D5DCE2;
-
-    font-family: "Manrope", sans-serif;
-
+    color: #E1E9EF;
+    font-size: 14px;
     font-weight: 600;
+    letter-spacing: -0.15px;
 }
 
 .setting-left p {
-    margin-top: 4px;
+    margin: 5px 0 0;
 
-    color: #8995A1;
-
-    font-size: 13px;
+    color: #737F8B;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.6;
 }
+
+
+/* =====================================================
+   RIGHT ARROW
+===================================================== */
 
 .setting-card > svg {
-    color: #687581;
+    width: 17px;
+    height: 17px;
+
+    flex-shrink: 0;
+
+    color: #657587;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.setting-card:hover > svg {
+    color: #6E9BC0;
+    transform: translateX(3px);
 }
 
 
-/* =======================
-        LOGOUT
-======================= */
+/* =====================================================
+   LOGOUT
+===================================================== */
 
-.logout {
-    border: 1px solid #493037;
+.setting-card.logout {
+    border-color: #493037;
+    background: #11171D;
 }
 
-.logout:hover {
+.setting-card.logout:hover {
     border-color: #65404A;
+    background: #18191F;
 }
 
-.logout .setting-left svg,
-.logout h3 {
+.setting-card.logout .setting-left svg,
+.setting-card.logout .setting-left h3 {
     color: #C4777D;
 }
 
+.setting-card.logout:hover .setting-left svg,
+.setting-card.logout:hover .setting-left h3 {
+    color: #D58A90;
+}
 
-/* =========================
-       NOTIFICATIONS
-========================= */
+
+/* =====================================================
+   NOTIFICATIONS
+===================================================== */
 
 .notification-option {
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
+    gap: 25px;
 
     padding: 18px 0;
 
     border-bottom: 1px solid #293540;
-
-    gap: 20px;
 }
 
 .notification-option:last-of-type {
@@ -182,33 +255,28 @@
 .notification-option h3 {
     margin: 0;
 
-    color: #D5DCE2;
-
-    font-family: "Manrope", sans-serif;
-
-    font-size: 17px;
-
+    color: #DDE5EB;
+    font-size: 14px;
     font-weight: 600;
 }
 
 .notification-option p {
-    margin-top: 5px;
+    margin: 5px 0 0;
 
-    color: #8995A1;
-
-    font-size: 13px;
+    color: #737F8B;
+    font-size: 11px;
+    line-height: 1.6;
 }
 
 
-/* =========================
-          SWITCH
-========================= */
+/* =====================================================
+   SWITCH
+===================================================== */
 
 .switch {
     position: relative;
 
     width: 48px;
-
     height: 26px;
 
     flex-shrink: 0;
@@ -216,60 +284,54 @@
 
 .switch input {
     opacity: 0;
-
     width: 0;
-
     height: 0;
 }
 
 .slider {
     position: absolute;
+    inset: 0;
 
     cursor: pointer;
 
-    inset: 0;
-
     background: #34404C;
-
     border-radius: 30px;
 
-    transition: 0.3s;
+    transition: background 0.25s ease;
 }
 
-.slider:before {
+.slider::before {
     content: "";
 
     position: absolute;
 
     width: 20px;
-
     height: 20px;
 
     left: 3px;
-
     top: 3px;
 
     background: #C8D0D8;
-
     border-radius: 50%;
 
-    transition: 0.3s;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
 }
 
 .switch input:checked + .slider {
     background: #315A7D;
 }
 
-.switch input:checked + .slider:before {
+.switch input:checked + .slider::before {
     transform: translateX(22px);
-
     background: #E7ECF1;
 }
 
 
-/* =========================
-        SECURITY
-========================= */
+/* =====================================================
+   SECURITY
+===================================================== */
 
 .password-field {
     margin-bottom: 18px;
@@ -277,138 +339,208 @@
 
 .password-field label {
     display: block;
-
     margin-bottom: 7px;
 
     color: #B8C2CC;
-
-    font-size: 14px;
-
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 600;
 }
 
 .password-input {
     display: flex;
-
     align-items: center;
 
     width: 100%;
 
-    border: 1px solid #293540;
-
-    border-radius: 12px;
-
-    background: #0D141C;
-
     overflow: hidden;
 
-    box-sizing: border-box;
+    background: #0D141C;
+    border: 1px solid #293540;
+    border-radius: 11px;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+.password-input:focus-within {
+    border-color: #41617A;
+    background: #111A24;
 }
 
 .password-input input {
     flex: 1;
-
-    border: none;
-
-    outline: none;
+    min-width: 0;
 
     padding: 12px 14px;
 
-    font-size: 14px;
+    border: none;
+    outline: none;
 
     background: transparent;
-
     color: #D5DCE2;
 
-    font-family: "Manrope", sans-serif;
+    font-size: 13px;
 }
 
 .password-input button {
-    border: none;
+    padding: 10px 14px;
 
+    border: none;
     background: transparent;
 
     color: #7E8995;
 
     cursor: pointer;
 
-    padding: 10px 14px;
+    transition: color 0.2s ease;
 }
 
 .password-input button:hover {
-    color: #4B7FA8;
+    color: #6E9BC0;
 }
 
 
-/* =========================
-        SECURITY MESSAGES
-========================= */
+/* =====================================================
+   SECURITY MESSAGES
+===================================================== */
 
 .security-error {
     margin-top: 10px;
-
     padding: 11px 14px;
 
     border-radius: 10px;
 
     background: #302024;
-
     color: #D98A90;
 
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .security-success {
     margin-top: 10px;
-
     padding: 11px 14px;
 
     border-radius: 10px;
 
     background: #1E3026;
-
     color: #86B394;
 
-    font-size: 13px;
+    font-size: 12px;
 }
 
 
-/* =========================
-        SAVE BUTTON
-========================= */
+/* =====================================================
+   SAVE BUTTON
+===================================================== */
 
 .security-save {
     display: flex;
-
     align-items: center;
-
     gap: 8px;
 
-    padding: 11px 18px;
-
     margin-top: 20px;
+    padding: 12px 18px;
 
-    border: none;
+    border: 1px solid #40739D;
+    border-radius: 9px;
 
-    border-radius: 12px;
+    background: #315F85;
+    color: #F2F6FA;
 
-    background: #315A7D;
-
-    color: #F2F5F7;
+    font-size: 12px;
+    font-weight: 600;
 
     cursor: pointer;
 
-    font-family: "Manrope", sans-serif;
-
-    font-size: 14px;
-
-    font-weight: 500;
-
-    transition: 0.3s;
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .security-save:hover {
-    background: #47799F;
+    background: #3A709A;
+    border-color: #4B82AB;
 
-    opacity: 1;
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(49, 95, 133, 0.25);
+}
+
+.security-save:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* =====================================================
+   RESPONSIVE — TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .settings-content {
+        margin-left: 0;
+        padding: 100px 20px 45px;
+    }
+
+    .settings-header h1 {
+        font-size: 45px;
+        letter-spacing: -2.5px;
+    }
+
+    .settings-list {
+        max-width: none;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE — MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .settings-content {
+        padding: 90px 18px 40px;
+    }
+
+    .settings-header {
+        margin-bottom: 30px;
+    }
+
+    .settings-header h1 {
+        font-size: 40px;
+        letter-spacing: -2px;
+    }
+
+    .settings-header p {
+        font-size: 13px;
+    }
+
+    .setting-card {
+        padding: 17px;
+        border-radius: 12px;
+    }
+
+    .setting-left {
+        gap: 12px;
+    }
+
+    .setting-left h3 {
+        font-size: 13px;
+    }
+
+    .setting-left p {
+        font-size: 10px;
+    }
+
+    .notification-option {
+        align-items: flex-start;
+    }
 }
