@@ -183,7 +183,7 @@ https://query-mind-ai-eight.vercel.app
 
 ## Author
 
-Ramya Yadav
+Kommanaboyena Ramyasri
 Computer Science & Engineering Student
 
 ⭐ If you found QueryMind AI interesting, consider giving the repository a star!
